@@ -1,8 +1,11 @@
+import YouTube, { YouTubeProps } from "react-youtube";
+
 interface VideoModalProps {
   videoUrl: string | null;
   onClose: () => void;
   showAnswer: boolean;
   answer: string;
+  dailyDouble: boolean;
 }
 
 export const VideoModal = ({
@@ -10,7 +13,22 @@ export const VideoModal = ({
   onClose,
   showAnswer,
   answer,
+  dailyDouble,
 }: VideoModalProps) => {
+  const onPlayerReady: YouTubeProps["onReady"] = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  };
+
+  const opts: YouTubeProps["opts"] = {
+    height: "788",
+    width: "1400",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+
   return (
     <div
       className="absolute inset-0 left-0 top-0 w-[100vw] bg-jeopardy h-[100vh] flex items-center justify-center text-white cursor-pointer"
@@ -21,7 +39,14 @@ export const VideoModal = ({
           {answer}
         </p>
       ) : (
-        <img src={videoUrl!}></img>
+        videoUrl && (
+          <div className="relative">
+            <div>
+              <YouTube videoId={videoUrl} opts={opts} onReady={onPlayerReady} />
+            </div>
+            <div className="absolute w-[1400px] h-[50px] border-5 border-black z-10 bg-black left-0 right-0 top-0"></div>
+          </div>
+        )
       )}
     </div>
   );

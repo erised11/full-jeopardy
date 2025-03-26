@@ -113,6 +113,7 @@ function App() {
                       ? selectedQuestion.answer
                       : selectedQuestion.question
                   }
+                  dailyDouble={selectedQuestion.dailyDouble}
                   onClose={handleCloseModal}
                 />
               );
@@ -124,6 +125,7 @@ function App() {
                   onClose={handleCloseModal}
                   showAnswer={showAnswer}
                   answer={selectedQuestion.answer}
+                  dailyDouble={selectedQuestion.dailyDouble}
                 />
               );
 
@@ -134,6 +136,7 @@ function App() {
                   onClose={handleCloseModal}
                   showAnswer={showAnswer}
                   answer={selectedQuestion.answer}
+                  dailyDouble={selectedQuestion.dailyDouble}
                 />
               );
 
@@ -144,6 +147,7 @@ function App() {
                   onClose={handleCloseModal}
                   showAnswer={showAnswer}
                   answer={selectedQuestion.answer}
+                  dailyDouble={selectedQuestion.dailyDouble}
                 />
               );
 

@@ -3,6 +3,7 @@ interface ImageModalProps {
   onClose: () => void;
   showAnswer: boolean;
   answer: string;
+  dailyDouble: boolean;
 }
 
 export const ImageModal = ({
@@ -10,6 +11,7 @@ export const ImageModal = ({
   onClose,
   showAnswer,
   answer,
+  dailyDouble,
 }: ImageModalProps) => {
   return (
     <div

@@ -25,7 +25,7 @@
         "question": "",
         "answer": "Who is Eliud Kipchoge?",
         "type": "image",
-        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Eliud_Kipchoge_in_Berlin_-_2015_%28cropped%29.jpg",
+        "mediaUrl": "https://static01.nyt.com/images/2023/04/16/multimedia/16Boston-Kipchogerace-01-hfvg/16Boston-Kipchogerace-01-hfvg-superJumbo.jpg",
         "dailyDouble": false,
         "answered": false
       },
@@ -43,7 +43,7 @@
         "question": "Identify this famous person.",
         "answer": "Who is Hunter Woodhall?",
         "type": "image",
-        "mediaUrl": "https://people.com/thmb/EXkQLQjAJEOSqlLyW5uVKsplaLU=/4000x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(509x155:511x157)/Hunter-Woodhall-olympics-081624-1-f44e4c699ce74990ab490923665b9858.jpg",
+        "mediaUrl": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2170563683.jpg?c=original",
         "dailyDouble": false,
         "answered": false
       }
@@ -55,7 +55,7 @@
       {
         "value": 100,
         "question": "This is the most recently elected Bundeskanzler of Germany",
-        "answer": "Who is Friderich Merz?",
+        "answer": "Who is Friedrich Merz?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -72,7 +72,7 @@
       },
       {
         "value": 300,
-        "question": "Cabinet officials accidentally included a reporter in their group chat discussing war plans, using this messaging application",
+        "question": "Trump officials accidentally included a reporter in their group chat discussing war plans, using this app",
         "answer": "What is Signal?",
         "type": "text",
         "mediaUrl": null,
@@ -93,57 +93,57 @@
         "question": "",
         "answer": "What is the Serbian Protest Sonic Attack?",
         "type": "video",
-        "mediaUrl": "https://example.com/moonlanding.mp4",
+        "mediaUrl": "GgPUVMK6f2c",
         "dailyDouble": false,
         "answered": false
       }
     ]
   },
   {
-    "name": "Name That Tune",
+    "name": "Name That Artist",
     "questions": [
       {
         "value": 100,
-        "question": "Identify this song.",
-        "answer": "What is 'Bohemian Rhapsody'?",
+        "question": "",
+        "answer": "Who is Bob Marley?",
         "type": "audio",
-        "mediaUrl": "https://example.com/bohemian.mp3",
+        "mediaUrl": "https://myjeopardybucket.s3.us-east-1.amazonaws.com/Bob+Marley+%26+The+Wailers+-+Three+Little+Birds+(Official+Music+Video).mp3",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 200,
-        "question": "Identify this song.",
-        "answer": "What is 'Billie Jean'?",
+        "question": "",
+        "answer": "Who is Michael Jackson?",
         "type": "audio",
-        "mediaUrl": "https://example.com/billiejean.mp3",
+        "mediaUrl": "https://myjeopardybucket.s3.us-east-1.amazonaws.com/BILLIE+JEAN+bridge.mp3",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 300,
-        "question": "Identify this song.",
-        "answer": "What is 'Rolling in the Deep'?",
+        "question": "",
+        "answer": "What is 'Bee Gees'?",
         "type": "audio",
-        "mediaUrl": "https://example.com/rollingdeep.mp3",
+        "mediaUrl": "https://myjeopardybucket.s3.us-east-1.amazonaws.com/Bee+Gees+-+Stayin'+Alive+(Official+Music+Video).mp3",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 400,
-        "question": "Identify this song.",
-        "answer": "What is 'Smells Like Teen Spirit'?",
+        "question": "",
+        "answer": "What is 'Europe'?",
         "type": "audio",
-        "mediaUrl": "https://example.com/nirvana.mp3",
+        "mediaUrl": "https://myjeopardybucket.s3.us-east-1.amazonaws.com/Europe+-+The+Final+Countdown+(Official+Video).mp3",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 500,
-        "question": "Identify this song.",
-        "answer": "What is 'Uptown Funk'?",
+        "question": "",
+        "answer": "What is '4 Non Blondes'?",
         "type": "audio",
-        "mediaUrl": "https://example.com/uptownfunk.mp3",
+        "mediaUrl": "https://myjeopardybucket.s3.us-east-1.amazonaws.com/4+Non+Blondes+-+What's+Up+(Lyrics).mp3",
         "dailyDouble": false,
         "answered": false
       }
@@ -205,45 +205,45 @@
       {
         "value": 100,
         "question": "",
-        "answer": "What is 'The Lion King'?",
+        "answer": "What is 'Ratatouille'?",
         "type": "video",
-        "mediaUrl": "https://example.com/lionking.mp4",
+        "mediaUrl": "SGfB5Z9lcRo",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 200,
         "question": "",
-        "answer": "What is 'Toy Story'?",
+        "answer": "What is 'Up'?",
         "type": "video",
-        "mediaUrl": "https://example.com/toystory.mp4",
+        "mediaUrl": "6AIXFoinSnU",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 300,
         "question": "",
-        "answer": "What is 'Finding Nemo'?",
+        "answer": "What is 'Tom and Jerry'?",
         "type": "video",
-        "mediaUrl": "https://example.com/nemo.mp4",
+        "mediaUrl": "HJFxTsX0Ok0",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 400,
         "question": "",
-        "answer": "What is 'Shrek'?",
+        "answer": "What is 'Inside Out'?",
         "type": "video",
-        "mediaUrl": "https://example.com/shrek.mp4",
+        "mediaUrl": "DYHkbOugcD0",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 500,
         "question": "",
-        "answer": "What is 'Frozen'?",
+        "answer": "What is 'Pumuckl'?",
         "type": "video",
-        "mediaUrl": "https://example.com/frozen.mp4",
+        "mediaUrl": "6FFlNENDq5k",
         "dailyDouble": false,
         "answered": false
       }
@@ -254,8 +254,8 @@
     "questions": [
       {
         "value": 100,
-        "question": "Who wrote 'To Kill a Mockingbird'?",
-        "answer": "Who is Harper Lee?",
+        "question": "This is the tallest animal in the world?",
+        "answer": "What is a giraffe?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -264,7 +264,7 @@
       {
         "value": 200,
         "question": "Kevadia, or the Statue of Unity, is the world's largest statue and found in this country.",
-        "answer": "What is Au?",
+        "answer": "What is India?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -282,7 +282,7 @@
       {
         "value": 400,
         "question": "The fear of this number is called triskaidekaphobia.",
-        "answer": "What is 1912?",
+        "answer": "What is 13?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
