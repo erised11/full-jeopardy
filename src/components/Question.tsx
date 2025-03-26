@@ -17,9 +17,7 @@ interface QuestionProps {
 export const Question = ({ value, answered, onClick }: QuestionProps) => {
   return (
     <div
-      className={`bg-jeopardy text-white cursor-pointer rounded-md shadow-lg w-full h-30 flex flex-col justify-center ${
-        answered ? "opacity-50" : ""
-      }`}
+      className="bg-jeopardy text-white cursor-pointer rounded-md shadow-lg w-full h-30 flex flex-col justify-center"
       onClick={onClick}
     >
       {!answered && (

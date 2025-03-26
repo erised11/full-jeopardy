@@ -5,45 +5,45 @@
       {
         "value": 200,
         "question": "",
-        "answer": "Who is Albert Einstein?",
+        "answer": "Who is Mr. Bean?",
         "type": "image",
-        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Albert_Einstein_1947.jpg",
+        "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR30opEgwAGcDwia8hB367NA1Sk2oaiSPojog&s",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 400,
         "question": "",
-        "answer": "Who is Tom Cruise?",
+        "answer": "Who is Johnny Depp?",
         "type": "image",
-        "mediaUrl": "https://img.asmedia.epimg.net/resizer/v2/Y6AOLVC6EAR6KPEZAHEJXUVRE4.jpg?auth=ec64f53456a7fe0e7ed56fc885882028f449aba4da6c9921aa0868a719c25ec4&width=1200&height=1200&focal=2252%2C1084",
+        "mediaUrl": "https://imgix.ranker.com/list_img_v2/18200/1698200/original/25-pictures-of-young-johnny-depp-u1?w=817&h=427&fm=jpg&q=50&fit=crop",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 600,
         "question": "",
-        "answer": "Who is Eliud Kipchoge?",
+        "answer": "Who is Taylor Swift?",
         "type": "image",
-        "mediaUrl": "https://static01.nyt.com/images/2023/04/16/multimedia/16Boston-Kipchogerace-01-hfvg/16Boston-Kipchogerace-01-hfvg-superJumbo.jpg",
+        "mediaUrl": "https://i.pinimg.com/736x/f3/87/6a/f3876a506483d2eddd324a891f1d609e.jpg",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 800,
-        "question": "Identify this famous person.",
-        "answer": "Who is Frida Kahlo?",
+        "question": "",
+        "answer": "Who is Morgan Freeman?",
         "type": "image",
-        "mediaUrl": "https://i.natgeofe.com/n/128c169c-2fbe-4a53-b48c-ec92d1357660/05-frida-kahlo-difficult-women.jpg?w=2880&h=3840",
+        "mediaUrl": "https://preview.redd.it/27iws5v6ovxy.jpg?auto=webp&s=8a0f3de5cd63848855a80e254a5cd099fd4fd4de",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 1000,
-        "question": "Identify this famous person.",
-        "answer": "Who is Hunter Woodhall?",
+        "question": "",
+        "answer": "Who is LeBron James?",
         "type": "image",
-        "mediaUrl": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2170563683.jpg?c=original",
+        "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4yEylf1USpzXlpIY4NukNUwdaNG7fLROYkQ&s",
         "dailyDouble": false,
         "answered": false
       }
@@ -54,8 +54,8 @@
     "questions": [
       {
         "value": 200,
-        "question": "A young wizard discovers he’s famous and goes to a magical school.",
-        "answer": "What is Harry Potter and the Sorcerer's Stone?",
+        "question": "A young boy discovers he’s famous and goes to a magical school.",
+        "answer": "What is 'Harry Potter and the Sorcerer's Stone'?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -64,7 +64,7 @@
       {
         "value": 400,
         "question": "A sinking ship becomes a tragic love story.",
-        "answer": "What is Titanic?",
+        "answer": "What is 'Titanic'?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -73,7 +73,7 @@
       {
         "value": 600,
         "question": "A group of toys deal with abandonment issues.",
-        "answer": "What is Toy Story?",
+        "answer": "What is 'Toy Story'?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -82,7 +82,7 @@
       {
         "value": 800,
         "question": "A high school student balances crime-fighting and homework.",
-        "answer": "What is Spider-Man?",
+        "answer": "What is 'Spider-Man'?'",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": true,
@@ -90,8 +90,8 @@
       },
       {
         "value": 1000,
-        "question": "A group of criminals plan a heist in Las Vegas.",
-        "answer": "What is Ocean’s Eleven?",
+        "question": "After a wild night, the groom is nowhere to be found.",
+        "answer": "What is 'The Hangover'?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -154,46 +154,46 @@
     "questions": [
       {
         "value": 200,
-        "question": "Identify this brand from the edited version of its logo.",
-        "answer": "What is Nike?",
+        "question": "",
+        "answer": "What is Apple?",
         "type": "image",
-        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
+        "mediaUrl": "https://images.squarespace-cdn.com/content/v1/618bf212f2e0777ee00311d0/1643654517450-8IW2F2TLR72AOFPM4B8K/BI_Blog_PartialLogos_V2_apple.png?format=2500w",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 400,
-        "question": "Identify this brand from the blurred version of its logo.",
-        "answer": "What is McDonald's?",
+        "question": "",
+        "answer": "What is Amazon?",
         "type": "image",
-        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/McDonald's_Golden_Arches.svg",
+        "mediaUrl": "https://images.squarespace-cdn.com/content/v1/618bf212f2e0777ee00311d0/1643654610824-2NQK1TL63XFF1Q8QC0C3/BI_Blog_PartialLogos_V2_amazon.png?format=2500w",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 600,
-        "question": "Identify this brand from the pixelated version of its logo.",
-        "answer": "What is Apple?",
+        "question": "",
+        "answer": "What is Dominos?",
         "type": "image",
-        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+        "mediaUrl": "https://images.squarespace-cdn.com/content/v1/618bf212f2e0777ee00311d0/1643654556979-AAMOIIZ163OHMUTPEP7C/BI_Blog_PartialLogos_V2_domino.png?format=2500w",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 800,
-        "question": "Identify this brand from the distorted version of its logo.",
-        "answer": "What is Starbucks?",
+        "question": "",
+        "answer": "What is Volkswagen?",
         "type": "image",
-        "mediaUrl": "https://upload.wikimedia.org/wikipedia/en/3/35/Starbucks_Corporation_Logo_2011.svg",
+        "mediaUrl": "https://images.squarespace-cdn.com/content/v1/618bf212f2e0777ee00311d0/1643654672990-2D8CAZTERYW6B6S3ZCDL/BI_Blog_PartialLogos_V2_vw.png?format=2500w",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 1000,
-        "question": "Identify this brand from only a small portion of its logo.",
-        "answer": "What is Adidas?",
+        "question": "",
+        "answer": "What is Dropbox?",
         "type": "image",
-        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Adidas_logo.svg",
+        "mediaUrl": "https://images.squarespace-cdn.com/content/v1/618bf212f2e0777ee00311d0/1643654468977-G4FHY12AZ6QJKDGI1VTP/BI_Blog_PartialLogos_V2_dropbox.png?format=2500w",
         "dailyDouble": false,
         "answered": false
       }
@@ -204,8 +204,8 @@
     "questions": [
       {
         "value": 200,
-        "question": "What does the acronym NASA stand for?",
-        "answer": "What is National Aeronautics and Space Administration?",
+        "question": "What does the abbreviation 'bzw.' stand for?",
+        "answer": "What is beziehungsweise?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -213,8 +213,8 @@
       },
       {
         "value": 400,
-        "question": "What does the acronym HTML stand for?",
-        "answer": "What is HyperText Markup Language?",
+        "question": "What does the abbreviation 'MwSt.' stand for?",
+        "answer": "What is Mehrwertsteur?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -222,8 +222,8 @@
       },
       {
         "value": 600,
-        "question": "What does the acronym SCUBA stand for?",
-        "answer": "What is Self-Contained Underwater Breathing Apparatus?",
+        "question": "What does the acronym 'GOAT' stand for?",
+        "answer": "What is Greatest Of All Time?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -231,8 +231,8 @@
       },
       {
         "value": 800,
-        "question": "What does the acronym LASER stand for?",
-        "answer": "What is Light Amplification by Stimulated Emission of Radiation?",
+        "question": "What does the acronym 'EL' stand for?",
+        "answer": "What is Esslöffel",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -240,8 +240,8 @@
       },
       {
         "value": 1000,
-        "question": "What does the acronym JPEG stand for?",
-        "answer": "What is Joint Photographic Experts Group?",
+        "question": "What does the acronym 'GIF' stand for?",
+        "answer": "What is Graphics Interface Format?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -254,8 +254,8 @@
     "questions": [
       {
         "value": 200,
-        "question": "Which happened first? (a) The invention of the telephone (b) The first airplane flight (c) The discovery of penicillin",
-        "answer": "What is the invention of the telephone? (1876)",
+        "question": "(a) The sinking of the Titanic (b) The first moon landing (c) The creation of the internet",
+        "answer": "What is the sinking of the Titanic? (1912)",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -263,8 +263,8 @@
       },
       {
         "value": 400,
-        "question": "Which happened first? (a) The fall of the Berlin Wall (b) The launch of Facebook (c) The first iPhone release",
-        "answer": "What is the fall of the Berlin Wall? (1989)",
+        "question": "(a) The release of the first Star Wars movie, (b) The last guillotine execution in France, (c) The invention of the Post-it Note",
+        "answer": "What is (b), The last guillotine execution in France?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -272,7 +272,7 @@
       },
       {
         "value": 600,
-        "question": "Which happened first? (a) The sinking of the Titanic (b) The first moon landing (c) The creation of the internet",
+        "question": "(a) The sinking of the Titanic (b) The first moon landing (c) The creation of the internet",
         "answer": "What is the sinking of the Titanic? (1912)",
         "type": "text",
         "mediaUrl": null,
@@ -281,8 +281,8 @@
       },
       {
         "value": 800,
-        "question": "Which happened first? (a) The discovery of electricity (b) The first photograph taken (c) The signing of the Declaration of Independence",
-        "answer": "What is the discovery of electricity? (1752, Benjamin Franklin's kite experiment)",
+        "question": "(a) The fall of the Ottoman Empire, (b) The first Titanic movie being made, (c) The invention of the pop-up toaster",
+        "answer": "What is (b), The first Titanic movie being made?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
@@ -290,8 +290,8 @@
       },
       {
         "value": 1000,
-        "question": "Which happened first? (a) The founding of Google (b) The release of Harry Potter and the Sorcerer’s Stone (book) (c) The launch of Wikipedia",
-        "answer": "What is the release of Harry Potter and the Sorcerer’s Stone? (1997)",
+        "question": "(a) Harvard University was founded, (b) Isaac Newton published Principia Mathematica, (c) The United States was founded",
+        "answer": "What is (a), Harvard University was founded?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
