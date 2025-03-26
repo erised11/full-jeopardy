@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jeopardy: #041f9d;
+  --color-number: #eda958;
+  --font-swiss: "Swiss 911";
+  --font-korinna: "ITC Korinna";
+}
+
+@font-face {
+  font-family: "ITC Korinna";
+  src: url("./assets/korinnaitc.ttf");
+}
+
+@font-face {
+  font-family: "Swiss 911";
+  src: url("./assets/swiss911_ucm_bt.ttf");
+}
+
+@layer base {
+  h2 {
+    text-shadow: 2px 2px 2px #000;
+  }
+
+  h3 {
+    text-shadow: 3px 3px 2px #000;
+  }
+
+  p {
+    text-shadow: 8px 8px 2px #000;
+  }
+}

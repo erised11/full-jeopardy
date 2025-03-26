@@ -1,0 +1,302 @@
+[
+  {
+    "name": "Face the Fame",
+    "questions": [
+      {
+        "value": 100,
+        "question": "",
+        "answer": "Who is Albert Einstein?",
+        "type": "image",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Albert_Einstein_1947.jpg",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 200,
+        "question": "",
+        "answer": "Who is Tom Cruise?",
+        "type": "image",
+        "mediaUrl": "https://img.asmedia.epimg.net/resizer/v2/Y6AOLVC6EAR6KPEZAHEJXUVRE4.jpg?auth=ec64f53456a7fe0e7ed56fc885882028f449aba4da6c9921aa0868a719c25ec4&width=1200&height=1200&focal=2252%2C1084",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 300,
+        "question": "",
+        "answer": "Who is Eliud Kipchoge?",
+        "type": "image",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Eliud_Kipchoge_in_Berlin_-_2015_%28cropped%29.jpg",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "Identify this famous person.",
+        "answer": "Who is Frida Kahlo?",
+        "type": "image",
+        "mediaUrl": "https://i.natgeofe.com/n/128c169c-2fbe-4a53-b48c-ec92d1357660/05-frida-kahlo-difficult-women.jpg?w=2880&h=3840",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 500,
+        "question": "Identify this famous person.",
+        "answer": "Who is Hunter Woodhall?",
+        "type": "image",
+        "mediaUrl": "https://people.com/thmb/EXkQLQjAJEOSqlLyW5uVKsplaLU=/4000x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(509x155:511x157)/Hunter-Woodhall-olympics-081624-1-f44e4c699ce74990ab490923665b9858.jpg",
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  },
+  {
+    "name": "Breaking News",
+    "questions": [
+      {
+        "value": 100,
+        "question": "This is the most recently elected Bundeskanzler of Germany",
+        "answer": "Who is Friderich Merz?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 200,
+        "question": "This country is experiencing its worst wildfires ever, already leaving 24 dead.",
+        "answer": "What is South Korea?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 300,
+        "question": "Cabinet officials accidentally included a reporter in their group chat discussing war plans, using this messaging application",
+        "answer": "What is Signal?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "This running group was recently founded in Munich, focusing on diversity.",
+        "answer": "What is moving minds?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 500,
+        "question": "",
+        "answer": "What is the Serbian Protest Sonic Attack?",
+        "type": "video",
+        "mediaUrl": "https://example.com/moonlanding.mp4",
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  },
+  {
+    "name": "Name That Tune",
+    "questions": [
+      {
+        "value": 100,
+        "question": "Identify this song.",
+        "answer": "What is 'Bohemian Rhapsody'?",
+        "type": "audio",
+        "mediaUrl": "https://example.com/bohemian.mp3",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 200,
+        "question": "Identify this song.",
+        "answer": "What is 'Billie Jean'?",
+        "type": "audio",
+        "mediaUrl": "https://example.com/billiejean.mp3",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 300,
+        "question": "Identify this song.",
+        "answer": "What is 'Rolling in the Deep'?",
+        "type": "audio",
+        "mediaUrl": "https://example.com/rollingdeep.mp3",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "Identify this song.",
+        "answer": "What is 'Smells Like Teen Spirit'?",
+        "type": "audio",
+        "mediaUrl": "https://example.com/nirvana.mp3",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 500,
+        "question": "Identify this song.",
+        "answer": "What is 'Uptown Funk'?",
+        "type": "audio",
+        "mediaUrl": "https://example.com/uptownfunk.mp3",
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  },
+  {
+    "name": "Who Said That?",
+    "questions": [
+      {
+        "value": 100,
+        "question": "'I have a dream.'",
+        "answer": "Who is Martin Luther King Jr.?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 200,
+        "question": "'That’s one small step for a man, a giant leap for mankind.'",
+        "answer": "Who is Neil Armstrong?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 300,
+        "question": "'All that glitters is not gold'",
+        "answer": "Who is William Shakespeare?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "'Was mich nicht umbringt, macht mich stärker'",
+        "answer": "Who is Friedrich Nietzsche? (or Kelly Clarkson)",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": true,
+        "answered": false
+      },
+      {
+        "value": 500,
+        "question": "'...I've failed over and over and over again in my life. And that is why I succeed.'",
+        "answer": "Who is Michael Jordan?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  },
+  {
+    "name": "Cartoon Confidential",
+    "questions": [
+      {
+        "value": 100,
+        "question": "",
+        "answer": "What is 'The Lion King'?",
+        "type": "video",
+        "mediaUrl": "https://example.com/lionking.mp4",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 200,
+        "question": "",
+        "answer": "What is 'Toy Story'?",
+        "type": "video",
+        "mediaUrl": "https://example.com/toystory.mp4",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 300,
+        "question": "",
+        "answer": "What is 'Finding Nemo'?",
+        "type": "video",
+        "mediaUrl": "https://example.com/nemo.mp4",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "",
+        "answer": "What is 'Shrek'?",
+        "type": "video",
+        "mediaUrl": "https://example.com/shrek.mp4",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 500,
+        "question": "",
+        "answer": "What is 'Frozen'?",
+        "type": "video",
+        "mediaUrl": "https://example.com/frozen.mp4",
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  },
+  {
+    "name": "Pot Pourri",
+    "questions": [
+      {
+        "value": 100,
+        "question": "Who wrote 'To Kill a Mockingbird'?",
+        "answer": "Who is Harper Lee?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 200,
+        "question": "Kevadia, or the Statue of Unity, is the world's largest statue and found in this country.",
+        "answer": "What is Au?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 300,
+        "question": "This country created the world's fastest Maglev train, capable of 460 km/h.",
+        "answer": "What is China?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "The fear of this number is called triskaidekaphobia.",
+        "answer": "What is 1912?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 500,
+        "question": "This European country’s name means 'Land of the Rabbits' in Latin",
+        "answer": "What is Spain?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  }
+]
