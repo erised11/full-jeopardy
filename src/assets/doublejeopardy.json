@@ -104,46 +104,46 @@
     "questions": [
       {
         "value": 200,
-        "question": "Identify the animal making this sound.",
-        "answer": "What is a lion?",
+        "question": "",
+        "answer": "What is an owl?",
         "type": "audio",
-        "mediaUrl": "https://example.com/lion_roar.mp3",
+        "mediaUrl": "https://myjeopardybucket.s3.us-east-1.amazonaws.com/Sound+Effects+-+Owl+Hooting+Noise.mp3",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 400,
-        "question": "Identify the object making this sound.",
+        "question": "",
         "answer": "What is a train whistle?",
         "type": "audio",
-        "mediaUrl": "https://example.com/train_whistle.mp3",
+        "mediaUrl": "https://myjeopardybucket.s3.us-east-1.amazonaws.com/Train+Horns+Sound+Effect.mp3",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 600,
-        "question": "Identify the animal making this sound.",
-        "answer": "What is a dolphin?",
+        "question": "",
+        "answer": "What is dial up internet?",
         "type": "audio",
-        "mediaUrl": "https://example.com/dolphin_clicks.mp3",
+        "mediaUrl": "https://myjeopardybucket.s3.us-east-1.amazonaws.com/Dial+Up+Internet+-+Sound+Effect+(HD).mp3",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 800,
-        "question": "Identify the object making this sound.",
-        "answer": "What is a typewriter?",
+        "question": "",
+        "answer": "What is a cello?",
         "type": "audio",
-        "mediaUrl": "https://example.com/typewriter.mp3",
+        "mediaUrl": "https://myjeopardybucket.s3.us-east-1.amazonaws.com/What+does+a+cello+sound+like%EF%BC%9F+(Ode+to+Joy).mp3",
         "dailyDouble": false,
         "answered": false
       },
       {
         "value": 1000,
-        "question": "Identify the animal making this sound.",
-        "answer": "What is an owl?",
+        "question": "",
+        "answer": "What is a dolphin?",
         "type": "audio",
-        "mediaUrl": "https://example.com/owl_hoot.mp3",
+        "mediaUrl": "https://myjeopardybucket.s3.us-east-1.amazonaws.com/Dolphin+Sounds.mp3",
         "dailyDouble": false,
         "answered": false
       }
