@@ -1,4 +1,6 @@
+import { useState } from "react";
 import YouTube, { YouTubeProps } from "react-youtube";
+import { DailyDoubleModal } from "./DailyDoubleModal";
 
 interface VideoModalProps {
   videoUrl: string | null;
@@ -20,6 +22,12 @@ export const VideoModal = ({
     event.target.pauseVideo();
   };
 
+  const [isDaily, setIsDaily] = useState<boolean>(dailyDouble);
+
+  const closeDaily = () => {
+    setIsDaily(false);
+  };
+
   const opts: YouTubeProps["opts"] = {
     height: "788",
     width: "1400",
@@ -29,13 +37,15 @@ export const VideoModal = ({
     },
   };
 
-  return (
+  return isDaily ? (
+    <DailyDoubleModal onClose={closeDaily}></DailyDoubleModal>
+  ) : (
     <div
       className="absolute inset-0 left-0 top-0 w-[100vw] bg-jeopardy h-[100vh] flex items-center justify-center text-white cursor-pointer"
       onClick={onClose}
     >
       {showAnswer ? (
-        <p className="rounded-lg text-center text-[100px] w-3/4 font-korinna textShadow">
+        <p className="rounded-lg text-center text-[100px] w-3/4 font-korinna textShadow uppercase">
           {answer}
         </p>
       ) : (

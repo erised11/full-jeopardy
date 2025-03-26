@@ -1,5 +1,7 @@
+import { useState } from "react";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
+import { DailyDoubleModal } from "./DailyDoubleModal";
 
 interface AudioModalProps {
   audioUrl: string | null;
@@ -20,7 +22,15 @@ export const AudioModal = ({
     e.stopPropagation();
   };
 
-  return (
+  const [isDaily, setIsDaily] = useState<boolean>(dailyDouble);
+
+  const closeDaily = () => {
+    setIsDaily(false);
+  };
+
+  return isDaily ? (
+    <DailyDoubleModal onClose={closeDaily}></DailyDoubleModal>
+  ) : (
     <div
       className="absolute inset-0 left-0 top-0 w-[100vw] bg-jeopardy h-[100vh] flex items-center justify-center text-white cursor-pointer"
       onClick={onClose}
