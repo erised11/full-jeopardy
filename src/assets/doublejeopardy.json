@@ -1,0 +1,302 @@
+[
+  {
+    "name": "Before the Fame",
+    "questions": [
+      {
+        "value": 200,
+        "question": "",
+        "answer": "Who is Albert Einstein?",
+        "type": "image",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Albert_Einstein_1947.jpg",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "",
+        "answer": "Who is Tom Cruise?",
+        "type": "image",
+        "mediaUrl": "https://img.asmedia.epimg.net/resizer/v2/Y6AOLVC6EAR6KPEZAHEJXUVRE4.jpg?auth=ec64f53456a7fe0e7ed56fc885882028f449aba4da6c9921aa0868a719c25ec4&width=1200&height=1200&focal=2252%2C1084",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 600,
+        "question": "",
+        "answer": "Who is Eliud Kipchoge?",
+        "type": "image",
+        "mediaUrl": "https://static01.nyt.com/images/2023/04/16/multimedia/16Boston-Kipchogerace-01-hfvg/16Boston-Kipchogerace-01-hfvg-superJumbo.jpg",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 800,
+        "question": "Identify this famous person.",
+        "answer": "Who is Frida Kahlo?",
+        "type": "image",
+        "mediaUrl": "https://i.natgeofe.com/n/128c169c-2fbe-4a53-b48c-ec92d1357660/05-frida-kahlo-difficult-women.jpg?w=2880&h=3840",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 1000,
+        "question": "Identify this famous person.",
+        "answer": "Who is Hunter Woodhall?",
+        "type": "image",
+        "mediaUrl": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2170563683.jpg?c=original",
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  },
+  {
+    "name": "Movie in 1 Sentence",
+    "questions": [
+      {
+        "value": 200,
+        "question": "A young wizard discovers he’s famous and goes to a magical school.",
+        "answer": "What is Harry Potter and the Sorcerer's Stone?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "A sinking ship becomes a tragic love story.",
+        "answer": "What is Titanic?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 600,
+        "question": "A group of toys deal with abandonment issues.",
+        "answer": "What is Toy Story?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 800,
+        "question": "A high school student balances crime-fighting and homework.",
+        "answer": "What is Spider-Man?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": true,
+        "answered": false
+      },
+      {
+        "value": 1000,
+        "question": "A group of criminals plan a heist in Las Vegas.",
+        "answer": "What is Ocean’s Eleven?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  },
+  {
+    "name": "What’s that noise?",
+    "questions": [
+      {
+        "value": 200,
+        "question": "Identify the animal making this sound.",
+        "answer": "What is a lion?",
+        "type": "audio",
+        "mediaUrl": "https://example.com/lion_roar.mp3",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "Identify the object making this sound.",
+        "answer": "What is a train whistle?",
+        "type": "audio",
+        "mediaUrl": "https://example.com/train_whistle.mp3",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 600,
+        "question": "Identify the animal making this sound.",
+        "answer": "What is a dolphin?",
+        "type": "audio",
+        "mediaUrl": "https://example.com/dolphin_clicks.mp3",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 800,
+        "question": "Identify the object making this sound.",
+        "answer": "What is a typewriter?",
+        "type": "audio",
+        "mediaUrl": "https://example.com/typewriter.mp3",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 1000,
+        "question": "Identify the animal making this sound.",
+        "answer": "What is an owl?",
+        "type": "audio",
+        "mediaUrl": "https://example.com/owl_hoot.mp3",
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  },
+  {
+    "name": "Brand Breakdown",
+    "questions": [
+      {
+        "value": 200,
+        "question": "Identify this brand from the edited version of its logo.",
+        "answer": "What is Nike?",
+        "type": "image",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "Identify this brand from the blurred version of its logo.",
+        "answer": "What is McDonald's?",
+        "type": "image",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/McDonald's_Golden_Arches.svg",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 600,
+        "question": "Identify this brand from the pixelated version of its logo.",
+        "answer": "What is Apple?",
+        "type": "image",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 800,
+        "question": "Identify this brand from the distorted version of its logo.",
+        "answer": "What is Starbucks?",
+        "type": "image",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/en/3/35/Starbucks_Corporation_Logo_2011.svg",
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 1000,
+        "question": "Identify this brand from only a small portion of its logo.",
+        "answer": "What is Adidas?",
+        "type": "image",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Adidas_logo.svg",
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  },
+  {
+    "name": "Initial Thoughts",
+    "questions": [
+      {
+        "value": 200,
+        "question": "What does the acronym NASA stand for?",
+        "answer": "What is National Aeronautics and Space Administration?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "What does the acronym HTML stand for?",
+        "answer": "What is HyperText Markup Language?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 600,
+        "question": "What does the acronym SCUBA stand for?",
+        "answer": "What is Self-Contained Underwater Breathing Apparatus?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 800,
+        "question": "What does the acronym LASER stand for?",
+        "answer": "What is Light Amplification by Stimulated Emission of Radiation?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 1000,
+        "question": "What does the acronym JPEG stand for?",
+        "answer": "What is Joint Photographic Experts Group?",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  },
+  {
+    "name": "What Happened First?",
+    "questions": [
+      {
+        "value": 200,
+        "question": "Which happened first? (a) The invention of the telephone (b) The first airplane flight (c) The discovery of penicillin",
+        "answer": "What is the invention of the telephone? (1876)",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 400,
+        "question": "Which happened first? (a) The fall of the Berlin Wall (b) The launch of Facebook (c) The first iPhone release",
+        "answer": "What is the fall of the Berlin Wall? (1989)",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 600,
+        "question": "Which happened first? (a) The sinking of the Titanic (b) The first moon landing (c) The creation of the internet",
+        "answer": "What is the sinking of the Titanic? (1912)",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 800,
+        "question": "Which happened first? (a) The discovery of electricity (b) The first photograph taken (c) The signing of the Declaration of Independence",
+        "answer": "What is the discovery of electricity? (1752, Benjamin Franklin's kite experiment)",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      },
+      {
+        "value": 1000,
+        "question": "Which happened first? (a) The founding of Google (b) The release of Harry Potter and the Sorcerer’s Stone (book) (c) The launch of Wikipedia",
+        "answer": "What is the release of Harry Potter and the Sorcerer’s Stone? (1997)",
+        "type": "text",
+        "mediaUrl": null,
+        "dailyDouble": false,
+        "answered": false
+      }
+    ]
+  }
+]

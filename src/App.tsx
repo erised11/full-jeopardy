@@ -2,13 +2,17 @@ import { useState } from "react";
 import { Category } from "./components/Category";
 import { QuestionModal } from "./components/QuestionModal";
 import jeopardyData from "./assets/questions.json";
+import doubleJeopardyData from "./assets/doublejeopardy.json";
 import { ImageModal } from "./components/ImageModal";
 import { AudioModal } from "./components/AudioModal";
 import { VideoModal } from "./components/VideoModal";
+import { FinalJeopardyModal } from "./components/FinalJeopardyModal";
 // import doubleJeopardyData
 
 function App() {
   const [categories, setCategories] = useState(jeopardyData);
+  const [playedDoubleJeopardy, setPlayedDoubleJeopardy] = useState(false);
+  const [finalJeopardy, setFinalJeopardy] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState<{
     categoryIndex: number;
     questionIndex: number;
@@ -43,6 +47,16 @@ function App() {
     }
   };
 
+  const startDoubleJeopardy = () => {
+    setAnsweredQuestionsCount(0);
+    setPlayedDoubleJeopardy(true);
+    setCategories(doubleJeopardyData);
+  };
+
+  const startFinalJeopardy = () => {
+    setFinalJeopardy(true);
+  };
+
   const setQuestionToAnswered = () => {
     setCategories((prevCategories) =>
       prevCategories.map((category, cIdx) =>
@@ -59,6 +73,7 @@ function App() {
       )
     );
     setAnsweredQuestionsCount((prev) => prev + 1);
+    console.log(answeredQuestionsCount);
   };
 
   const setQuestionToUnAnswered = (
@@ -90,7 +105,7 @@ function App() {
   };
 
   return (
-    <div className="w-[100vw] h-[100vh] bg-jeopardy">
+    <div className="w-[100vw] h-[100vh] bg-jeopardy flex flex-col">
       <div className="flex flex-row bg-black pb-2">
         {categories.map((category, cIdx) => (
           <Category
@@ -101,6 +116,28 @@ function App() {
           />
         ))}
       </div>
+      {answeredQuestionsCount >= 30 && !playedDoubleJeopardy && (
+        <div
+          className="w-full flex flex-row mt-1 cursor-pointer"
+          onClick={startDoubleJeopardy}
+        >
+          <div className="p-4 mr-2 ml-auto text-white font-swiss text-5xl border-3 textShadow rounded-md border-number bg-blue-800 ">
+            Double Jeopardy
+          </div>
+        </div>
+      )}
+      {answeredQuestionsCount >= 30 && playedDoubleJeopardy && (
+        <div
+          className="w-full flex flex-row mt-1 cursor-pointer"
+          onClick={startFinalJeopardy}
+        >
+          <div className="p-4 mr-2 ml-auto text-white font-swiss text-5xl border-3 textShadow rounded-md border-number bg-blue-800 ">
+            Final Jeopardy
+          </div>
+        </div>
+      )}
+
+      {finalJeopardy && <FinalJeopardyModal></FinalJeopardyModal>}
 
       {selectedQuestion &&
         (() => {
