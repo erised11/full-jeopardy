@@ -21,7 +21,8 @@ export const Question = ({ value, answered, onClick }: QuestionProps) => {
       onClick={onClick}
     >
       {!answered && (
-        <h3 className="text-[100px] font-extrabold font-swiss text-number m-auto textShadow">
+        <h3 className="text-[100px] font-extrabold font-swiss text-number textShadow m-auto">
+          <span className="text-[77px] px-1 align-text-top">$</span>
           {value}
         </h3>
       )}

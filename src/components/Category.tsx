@@ -21,7 +21,7 @@ export const Category = ({
 }: CategoryProps) => {
   return (
     <div className="flex flex-col items-center w-[16.66667%] text-center">
-      <div className="h-34 mb-1 border-4 w-[100%] text-5xl border-gray-700 text-white bg-jeopardy flex flex-col justify-center">
+      <div className="h-34 mb-1 border-6 w-[100%] text-5xl border-black text-white bg-jeopardy flex flex-col justify-center">
         <h2 className="m-auto font-swiss uppercase textShadow">{name}</h2>
       </div>
 
