@@ -254,7 +254,7 @@
     "questions": [
       {
         "value": 100,
-        "question": "This is the tallest animal in the world?",
+        "question": "This is the tallest animal in the world.",
         "answer": "What is a giraffe?",
         "type": "text",
         "mediaUrl": null,

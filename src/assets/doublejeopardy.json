@@ -204,7 +204,7 @@
     "questions": [
       {
         "value": 200,
-        "question": "What does the abbreviation 'bzw.' stand for?",
+        "question": "bzw.",
         "answer": "What is beziehungsweise?",
         "type": "text",
         "mediaUrl": null,
@@ -213,7 +213,7 @@
       },
       {
         "value": 400,
-        "question": "What does the abbreviation 'MwSt.' stand for?",
+        "question": "MwSt.",
         "answer": "What is Mehrwertsteur?",
         "type": "text",
         "mediaUrl": null,
@@ -222,7 +222,7 @@
       },
       {
         "value": 600,
-        "question": "What does the acronym 'GOAT' stand for?",
+        "question": "GOAT",
         "answer": "What is Greatest Of All Time?",
         "type": "text",
         "mediaUrl": null,
@@ -231,7 +231,7 @@
       },
       {
         "value": 800,
-        "question": "What does the acronym 'EL' stand for?",
+        "question": "EL",
         "answer": "What is Esslöffel",
         "type": "text",
         "mediaUrl": null,
@@ -240,7 +240,7 @@
       },
       {
         "value": 1000,
-        "question": "What does the acronym 'GIF' stand for?",
+        "question": "GIF",
         "answer": "What is Graphics Interface Format?",
         "type": "text",
         "mediaUrl": null,
@@ -272,8 +272,8 @@
       },
       {
         "value": 600,
-        "question": "(a) The sinking of the Titanic (b) The first moon landing (c) The creation of the internet",
-        "answer": "What is the sinking of the Titanic? (1912)",
+        "question": "(a) The Wright brothers' first flight, (b) The first modern zipper patented, (c) The founding of Nintendo",
+        "answer": "The founding of Nintendo (1889)",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
