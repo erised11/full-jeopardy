@@ -241,7 +241,7 @@
       {
         "value": 1000,
         "question": "GIF",
-        "answer": "What is Graphics Interface Format?",
+        "answer": "What is Graphics Interchange Format?",
         "type": "text",
         "mediaUrl": null,
         "dailyDouble": false,
