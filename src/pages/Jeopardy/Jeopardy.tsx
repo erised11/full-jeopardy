@@ -1,30 +1,35 @@
 import { useState } from "react";
-import { Category } from "./components/Category";
-import { QuestionModal } from "./components/QuestionModal";
-import jeopardyData from "./assets/questions.json";
-import doubleJeopardyData from "./assets/doublejeopardy.json";
-import { ImageModal } from "./components/ImageModal";
-import { AudioModal } from "./components/AudioModal";
-import { VideoModal } from "./components/VideoModal";
-import { FinalJeopardyModal } from "./components/FinalJeopardyModal";
-// import doubleJeopardyData
+import { Category } from "../../components/Category";
+import { QuestionModal } from "../../components/QuestionModal";
+import { ImageModal } from "../../components/ImageModal";
+import { AudioModal } from "../../components/AudioModal";
+import { VideoModal } from "../../components/VideoModal";
+import { FinalJeopardyModal } from "../../components/FinalJeopardyModal";
+import { useJeopardyGameContext } from "../../hooks/useJeopardyGameContext";
 
-function App() {
-  const [categories, setCategories] = useState(jeopardyData);
+export type JeopardyQuestion = {
+  categoryIndex: number;
+  questionIndex: number;
+  question: string;
+  answer: string;
+  type: string;
+  mediaUrl: string | null;
+  dailyDouble: boolean;
+};
+
+export const Jeopardy = () => {
+  const game = useJeopardyGameContext();
+  const [categories, setCategories] = useState(game.jeopardy);
   const [playedDoubleJeopardy, setPlayedDoubleJeopardy] = useState(false);
   const [finalJeopardy, setFinalJeopardy] = useState(false);
-  const [selectedQuestion, setSelectedQuestion] = useState<{
-    categoryIndex: number;
-    questionIndex: number;
-    question: string;
-    answer: string;
-    type: string;
-    mediaUrl: string | null;
-    dailyDouble: boolean;
-  } | null>(null);
+  const [
+    selectedQuestion,
+    setSelectedQuestion,
+  ] = useState<JeopardyQuestion | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [answeredQuestionsCount, setAnsweredQuestionsCount] =
-    useState<number>(0);
+  const [answeredQuestionsCount, setAnsweredQuestionsCount] = useState<number>(
+    0
+  );
 
   const handleQuestionClick = (
     categoryIndex: number,
@@ -50,7 +55,7 @@ function App() {
   const startDoubleJeopardy = () => {
     setAnsweredQuestionsCount(0);
     setPlayedDoubleJeopardy(true);
-    setCategories(doubleJeopardyData);
+    setCategories(game.doubleJeopardy);
   };
 
   const startFinalJeopardy = () => {
@@ -194,6 +199,6 @@ function App() {
         })()}
     </div>
   );
-}
+};
 
-export default App;
+export default Jeopardy;
