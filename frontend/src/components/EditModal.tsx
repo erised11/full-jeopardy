@@ -1,8 +1,9 @@
 import { QuestionType } from "@shared/types/types";
 import { JeopardyQuestion } from "../pages/Jeopardy/Jeopardy";
 import { SubmitHandler, useForm } from "react-hook-form";
+import Button from "./Button";
 
-type Inputs = {
+export type JeopardyQuestionInputs = {
   type: QuestionType;
   question: string;
   dailyDouble: boolean;
@@ -13,16 +14,24 @@ type Inputs = {
 type EditModalProps = {
   question: JeopardyQuestion;
   onClose: () => void;
+  hanldeUpdateQuestion: (questionInputs: JeopardyQuestionInputs) => void;
 };
 
-const EditModal = ({ question, onClose }: EditModalProps) => {
+const EditModal = ({
+  question,
+  onClose,
+  hanldeUpdateQuestion,
+}: EditModalProps) => {
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+    formState: {},
+  } = useForm<JeopardyQuestionInputs>();
+  const onSubmit: SubmitHandler<JeopardyQuestionInputs> = (
+    data: JeopardyQuestionInputs
+  ) => {
+    hanldeUpdateQuestion(data);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -40,8 +49,9 @@ const EditModal = ({ question, onClose }: EditModalProps) => {
             checked={question.dailyDouble ?? false}
             {...register("type")}
           />
-          <div className="absolute bottom-2 right-2 hover:cursor-pointer">
-            <button onClick={onClose}>Close</button>
+          <div className="flex absolute bottom-2 right-2 gap-4">
+            <Button type="button" onClick={onClose} text="Close" />
+            <Button type="submit" text="Save" />
           </div>
         </div>
       </div>

@@ -2,23 +2,27 @@ import { useState } from "react";
 import { useJeopardyGameContext } from "../../hooks/useJeopardyGameContext";
 import { Category } from "../../components/Category";
 import { JeopardyQuestion } from "./Jeopardy";
-import EditModal from "../../components/EditModal";
+import EditModal, { JeopardyQuestionInputs } from "../../components/EditModal";
 import Button from "@/components/Button";
 
 type JeopardyEditProps = {};
 
 const JeopardyEdit = ({}: JeopardyEditProps) => {
-  const game = useJeopardyGameContext();
-  console.log(game);
-  const [categories, setCategories] = useState(game.gameData.jeopardy);
-  const [editing, setEditing] = useState(false);
+  const {
+    originalGame,
+    editing,
+    setEditing,
+    saveDraft,
+  } = useJeopardyGameContext();
+  console.log(originalGame);
+  if (!originalGame) {
+    return;
+  }
+  const categories = originalGame?.gameData.jeopardy;
   const [
     selectedQuestion,
     setSelectedQuestion,
   ] = useState<JeopardyQuestion | null>(null);
-  const [newGame, setNewGame] = useState();
-
-  const duplicatedGame = structuredClone(game);
 
   const handleQuestionClick = (
     categoryIndex: number,
@@ -37,24 +41,9 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
     setEditing(true);
   };
 
-  const updateGame = async () => {
-    try {
-      const response = await fetch(`http://localhost:4000/games/${game.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(game),
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      console.log("Game created successfully:", data);
-      return data;
-    } catch (error) {
-      console.error("Error creating game:", error);
-    }
+  const handleUpdateQuestion = (questionInputs: JeopardyQuestionInputs) => {
+    console.log(questionInputs);
+    console.log(originalGame.gameData.jeopardy);
   };
 
   return (
@@ -70,7 +59,7 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
         ))}
       </div>
       <div className="text-white text-center w-1/5 p-4">
-        <Button text="Update Game" onClick={updateGame} />
+        <Button text="Update Game" onClick={saveDraft} />
       </div>
 
       {/* {finalJeopardy && <FinalJeopardyModal></FinalJeopardyModal>} */}
@@ -79,6 +68,7 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
         <EditModal
           question={selectedQuestion}
           onClose={() => setEditing(false)}
+          hanldeUpdateQuestion={handleUpdateQuestion}
         />
       )}
     </div>

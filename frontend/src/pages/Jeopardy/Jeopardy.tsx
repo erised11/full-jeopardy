@@ -18,9 +18,17 @@ export type JeopardyQuestion = {
 };
 
 export const Jeopardy = () => {
-  const game = useJeopardyGameContext();
-  const [categories, setCategories] = useState(game.gameData.jeopardy);
-  const [playedDoubleJeopardy, setPlayedDoubleJeopardy] = useState(false);
+  const jeopardyContext = useJeopardyGameContext();
+  const {
+    originalGame,
+    inDoubleJeopardy,
+    setInDoubleJeopardy,
+  } = jeopardyContext;
+  console.log(originalGame);
+  if (!originalGame) {
+    return;
+  }
+  const [categories, setCategories] = useState(originalGame.gameData.jeopardy);
   const [finalJeopardy, setFinalJeopardy] = useState(false);
   const [
     selectedQuestion,
@@ -54,8 +62,8 @@ export const Jeopardy = () => {
 
   const startDoubleJeopardy = () => {
     setAnsweredQuestionsCount(0);
-    setPlayedDoubleJeopardy(true);
-    setCategories(game.gameData.doubleJeopardy);
+    setInDoubleJeopardy(true);
+    setCategories(originalGame.gameData.doubleJeopardy);
   };
 
   const startFinalJeopardy = () => {
@@ -121,7 +129,7 @@ export const Jeopardy = () => {
           />
         ))}
       </div>
-      {answeredQuestionsCount >= 30 && !playedDoubleJeopardy && (
+      {answeredQuestionsCount >= 30 && !inDoubleJeopardy && (
         <div
           className="w-full flex flex-row mt-1 cursor-pointer"
           onClick={startDoubleJeopardy}
@@ -131,7 +139,7 @@ export const Jeopardy = () => {
           </div>
         </div>
       )}
-      {answeredQuestionsCount >= 30 && playedDoubleJeopardy && (
+      {answeredQuestionsCount >= 30 && inDoubleJeopardy && (
         <div
           className="w-full flex flex-row mt-1 cursor-pointer"
           onClick={startFinalJeopardy}

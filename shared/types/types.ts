@@ -30,3 +30,17 @@ export type JeopardyGame = {
     finalJeopardy: FinalJeopardy;
   };
 };
+
+export type JeopardyGameContextState = {
+  originalGame: JeopardyGame | null;
+  draftGame: JeopardyGame | null;
+  editing: boolean;
+  inDoubleJeopardy: boolean;
+  setInDoubleJeopardy: (inDouble: boolean) => void;
+  setEditing: (editing: boolean) => void;
+  setOriginalGame: (game: JeopardyGame) => void;
+  startEditing: () => void;
+  updateDraftGame: (game: JeopardyGame) => void;
+  saveDraft: () => Promise<void>;
+  discardDraft: () => void;
+};

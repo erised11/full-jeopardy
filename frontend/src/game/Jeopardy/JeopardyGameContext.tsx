@@ -1,4 +1,82 @@
-import { createContext } from "react";
-import { JeopardyGame } from "@shared/types/types";
+import { JeopardyGame, JeopardyGameContextState } from "@shared/types/types";
+import { createContext, useState } from "react";
 
-export const JeopardyGameContext = createContext<JeopardyGame | null>(null);
+type JeopardyGameProviderProps = {
+  game: JeopardyGame;
+  children: React.ReactNode;
+};
+
+export const JeopardyGameContext = createContext<JeopardyGameContextState | null>(
+  null
+);
+
+export function JeopardyGameProvider({
+  game,
+  children,
+}: JeopardyGameProviderProps) {
+  const [originalGame, setOriginalGame] = useState<JeopardyGame | null>(game);
+  const [draftGame, setDraftGame] = useState<JeopardyGame | null>(null);
+  const [editing, setEditing] = useState<boolean>(false);
+  const [inDoubleJeopardy, setInDoubleJeopardy] = useState<boolean>(false);
+
+  const startEditing = () => {
+    if (!originalGame) return;
+    setDraftGame(structuredClone(originalGame));
+  };
+
+  const updateDraftGame = (game: JeopardyGame) => {
+    setDraftGame(game);
+  };
+
+  const saveDraft = async () => {
+    if (!draftGame) {
+      return;
+    }
+    try {
+      const response = await fetch(
+        `http://localhost:4000/games/${draftGame.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(game),
+        }
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log("Game created successfully:", data);
+      setOriginalGame(draftGame);
+      setDraftGame(null);
+      return data;
+    } catch (error) {
+      console.error("Error creating game:", error);
+    }
+  };
+
+  const discardDraft = () => {
+    setDraftGame(null);
+  };
+
+  return (
+    <JeopardyGameContext.Provider
+      value={{
+        originalGame,
+        draftGame,
+        editing,
+        inDoubleJeopardy,
+        setInDoubleJeopardy,
+        setEditing,
+        setOriginalGame,
+        startEditing,
+        updateDraftGame,
+        saveDraft,
+        discardDraft,
+      }}
+    >
+      {children}
+    </JeopardyGameContext.Provider>
+  );
+}

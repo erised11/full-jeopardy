@@ -1,5 +1,5 @@
+import { JeopardyGameContext } from "@/game/Jeopardy/JeopardyGameContext";
 import { useContext } from "react";
-import { JeopardyGameContext } from "../game/Jeopardy/JeopardyGameContext";
 
 export function useJeopardyGameContext() {
   const context = useContext(JeopardyGameContext);
