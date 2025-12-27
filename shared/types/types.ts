@@ -18,6 +18,8 @@ export type FinalJeopardy = {
   mediaUrl: string | null;
 };
 
+export type QuestionType = "image" | "text" | "video" | "audio";
+
 export type JeopardyGame = {
   id: number;
   userId: number;
