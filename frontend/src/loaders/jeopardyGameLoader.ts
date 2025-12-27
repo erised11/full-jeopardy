@@ -4,7 +4,6 @@ import { JeopardyGame } from "@shared/types/types";
 export async function jeopardyGameLoader({
   params,
 }: LoaderFunctionArgs): Promise<JeopardyGame> {
-  console.log(params.gameId);
   const response = await fetch(`http://localhost:4000/games/${params.gameId}`);
 
   if (response.status === 404) {
@@ -16,5 +15,6 @@ export async function jeopardyGameLoader({
   }
 
   const game: JeopardyGame = await response.json();
+  console.log(game);
   return game;
 }

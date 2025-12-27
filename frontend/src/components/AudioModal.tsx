@@ -44,10 +44,7 @@ export const AudioModal = ({
           className="w-1/2 shadow-2xl drop-shadow-2xl border-4 border-number"
           onClick={handleClick}
         >
-          <AudioPlayer
-            src={audioUrl!}
-            // other props here
-          />
+          <AudioPlayer src={audioUrl!} />
         </div>
       )}
     </div>

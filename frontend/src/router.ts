@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "game/jeopardy/:gameId",
+    path: "games/:gameId",
     Component: JeopardyLayout,
     loader: jeopardyGameLoader,
     children: [

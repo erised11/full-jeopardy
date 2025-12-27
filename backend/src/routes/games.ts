@@ -41,9 +41,42 @@ gameRouter.get("/:id", async (req, res) => {
     if (result.rows.length === 0) {
       return res.status(404).json({ error: "Game not found" });
     }
-    res.json(result.rows[0]);
+    const row = result.rows[0];
+    res.json({
+      id: row.id,
+      userId: row.user_id,
+      title: row.title,
+      gameData: row.game_data,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Failed to fetch game" });
+  }
+});
+
+gameRouter.put("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, gameData } = req.body;
+    const result = await pool.query(
+      `UPDATE games SET title = COALESCE($2, title), 
+            game_data = $3 WHERE id = $1 RETURNING *`,
+      [id, title ?? null, gameData]
+    );
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: "Game not found" });
+    }
+
+    const row = result.rows[0];
+
+    res.json({
+      id: row.id,
+      userId: row.user_id,
+      title: row.title,
+      gameData: row.game_data,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Failed to update game" });
   }
 });

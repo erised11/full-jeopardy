@@ -12,16 +12,16 @@ const JeopardySelect = ({}: JeopardySelectProps) => {
       <div className="flex gap-4">
         {games.map((game, idx) => {
           return (
-            <Link key={idx} to={`/game/jeopardy/${game.id}`} className="">
-              <Card>
-                {/* <Link to={`/game/jeopardy/${game.id}/edit}`}>
-                  <div className="absolute top-0 right-0 p-2">Edit</div>
-                </Link> */}
+            <Card>
+              <Link key={idx} to={`/games/${game.id}`} className="w-full">
                 <div className="h-full w-full flex flex-col justify-center text-center">
                   Jeopardy Game {`${game.id}`}
                 </div>
-              </Card>
-            </Link>
+              </Link>
+              <Link to={`/games/${game.id}/edit`}>
+                <div className="absolute top-0 right-0 p-2">Edit</div>
+              </Link>
+            </Card>
           );
         })}
       </div>

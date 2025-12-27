@@ -3,11 +3,13 @@ import { useJeopardyGameContext } from "../../hooks/useJeopardyGameContext";
 import { Category } from "../../components/Category";
 import { JeopardyQuestion } from "./Jeopardy";
 import EditModal from "../../components/EditModal";
+import Button from "@/components/Button";
 
 type JeopardyEditProps = {};
 
 const JeopardyEdit = ({}: JeopardyEditProps) => {
   const game = useJeopardyGameContext();
+  console.log(game);
   const [categories, setCategories] = useState(game.gameData.jeopardy);
   const [editing, setEditing] = useState(false);
   const [
@@ -35,10 +37,10 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
     setEditing(true);
   };
 
-  const uploadGame = async () => {
+  const updateGame = async () => {
     try {
-      const response = await fetch("http://localhost:4000/games", {
-        method: "POST",
+      const response = await fetch(`http://localhost:4000/games/${game.id}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
@@ -56,10 +58,7 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
   };
 
   return (
-    <div className="w-[100vw] h-[100vh] bg-jeopardy flex flex-col">
-      <button className="w-24 h-24 bg-green-100 p-14" onClick={uploadGame}>
-        Upload game
-      </button>
+    <div className="w-full h-full bg-jeopardy flex">
       <div className="flex flex-row bg-black pb-2">
         {categories.map((category, cIdx) => (
           <Category
@@ -69,6 +68,9 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
             onQuestionClick={(qIdx) => handleQuestionClick(cIdx, qIdx)}
           />
         ))}
+      </div>
+      <div className="text-white text-center w-1/5 p-4">
+        <Button text="Update Game" onClick={updateGame} />
       </div>
 
       {/* {finalJeopardy && <FinalJeopardyModal></FinalJeopardyModal>} */}
