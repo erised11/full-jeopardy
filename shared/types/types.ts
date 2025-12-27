@@ -34,13 +34,11 @@ export type JeopardyGame = {
 export type JeopardyGameContextState = {
   originalGame: JeopardyGame | null;
   draftGame: JeopardyGame | null;
-  editing: boolean;
   inDoubleJeopardy: boolean;
-  setInDoubleJeopardy: (inDouble: boolean) => void;
-  setEditing: (editing: boolean) => void;
-  setOriginalGame: (game: JeopardyGame) => void;
+  setInDoubleJeopardy: React.Dispatch<React.SetStateAction<boolean>>;
+  setOriginalGame: React.Dispatch<React.SetStateAction<JeopardyGame | null>>;
   startEditing: () => void;
-  updateDraftGame: (game: JeopardyGame) => void;
+  setDraftGame: React.Dispatch<React.SetStateAction<JeopardyGame | null>>;
   saveDraft: () => Promise<void>;
   discardDraft: () => void;
 };

@@ -14,13 +14,13 @@ export type JeopardyQuestionInputs = {
 type EditModalProps = {
   question: JeopardyQuestion;
   onClose: () => void;
-  hanldeUpdateQuestion: (questionInputs: JeopardyQuestionInputs) => void;
+  handleUpdateQuestion: (questionInputs: JeopardyQuestionInputs) => void;
 };
 
 const EditModal = ({
   question,
   onClose,
-  hanldeUpdateQuestion,
+  handleUpdateQuestion,
 }: EditModalProps) => {
   const {
     register,
@@ -30,7 +30,8 @@ const EditModal = ({
   const onSubmit: SubmitHandler<JeopardyQuestionInputs> = (
     data: JeopardyQuestionInputs
   ) => {
-    hanldeUpdateQuestion(data);
+    onClose();
+    handleUpdateQuestion(data);
   };
 
   return (
@@ -50,7 +51,7 @@ const EditModal = ({
             {...register("type")}
           />
           <div className="flex absolute bottom-2 right-2 gap-4">
-            <Button type="button" onClick={onClose} text="Close" />
+            <Button onClick={onClose} text="Close" />
             <Button type="submit" text="Save" />
           </div>
         </div>

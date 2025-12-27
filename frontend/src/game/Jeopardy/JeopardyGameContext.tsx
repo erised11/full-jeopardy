@@ -1,5 +1,5 @@
 import { JeopardyGame, JeopardyGameContextState } from "@shared/types/types";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 type JeopardyGameProviderProps = {
   game: JeopardyGame;
@@ -16,7 +16,6 @@ export function JeopardyGameProvider({
 }: JeopardyGameProviderProps) {
   const [originalGame, setOriginalGame] = useState<JeopardyGame | null>(game);
   const [draftGame, setDraftGame] = useState<JeopardyGame | null>(null);
-  const [editing, setEditing] = useState<boolean>(false);
   const [inDoubleJeopardy, setInDoubleJeopardy] = useState<boolean>(false);
 
   const startEditing = () => {
@@ -24,11 +23,12 @@ export function JeopardyGameProvider({
     setDraftGame(structuredClone(originalGame));
   };
 
-  const updateDraftGame = (game: JeopardyGame) => {
-    setDraftGame(game);
-  };
+  useEffect(() => {
+    saveDraft();
+  }, [draftGame]);
 
   const saveDraft = async () => {
+    console.log(draftGame);
     if (!draftGame) {
       return;
     }
@@ -40,14 +40,14 @@ export function JeopardyGameProvider({
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(game),
+          body: JSON.stringify(draftGame),
         }
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log("Game created successfully:", data);
+      console.log("Game updated successfully:", data);
       setOriginalGame(draftGame);
       setDraftGame(null);
       return data;
@@ -65,13 +65,11 @@ export function JeopardyGameProvider({
       value={{
         originalGame,
         draftGame,
-        editing,
         inDoubleJeopardy,
         setInDoubleJeopardy,
-        setEditing,
         setOriginalGame,
         startEditing,
-        updateDraftGame,
+        setDraftGame,
         saveDraft,
         discardDraft,
       }}

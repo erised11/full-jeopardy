@@ -24,7 +24,6 @@ export const Jeopardy = () => {
     inDoubleJeopardy,
     setInDoubleJeopardy,
   } = jeopardyContext;
-  console.log(originalGame);
   if (!originalGame) {
     return;
   }
@@ -86,7 +85,6 @@ export const Jeopardy = () => {
       )
     );
     setAnsweredQuestionsCount((prev) => prev + 1);
-    console.log(answeredQuestionsCount);
   };
 
   const setQuestionToUnAnswered = (

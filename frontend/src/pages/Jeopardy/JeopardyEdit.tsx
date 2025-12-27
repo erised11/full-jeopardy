@@ -4,17 +4,18 @@ import { Category } from "../../components/Category";
 import { JeopardyQuestion } from "./Jeopardy";
 import EditModal, { JeopardyQuestionInputs } from "../../components/EditModal";
 import Button from "@/components/Button";
+import { Question } from "@shared/types/types";
 
 type JeopardyEditProps = {};
 
 const JeopardyEdit = ({}: JeopardyEditProps) => {
   const {
     originalGame,
-    editing,
-    setEditing,
     saveDraft,
+    inDoubleJeopardy,
+    startEditing,
+    setDraftGame,
   } = useJeopardyGameContext();
-  console.log(originalGame);
   if (!originalGame) {
     return;
   }
@@ -23,6 +24,8 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
     selectedQuestion,
     setSelectedQuestion,
   ] = useState<JeopardyQuestion | null>(null);
+
+  const [editing, setEditing] = useState<boolean>(false);
 
   const handleQuestionClick = (
     categoryIndex: number,
@@ -42,8 +45,47 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
   };
 
   const handleUpdateQuestion = (questionInputs: JeopardyQuestionInputs) => {
-    console.log(questionInputs);
-    console.log(originalGame.gameData.jeopardy);
+    if (!selectedQuestion) return;
+
+    startEditing(); // create the clone in the context
+
+    setDraftGame((prev) => {
+      if (!prev) return prev;
+
+      const boardKey = inDoubleJeopardy ? "doubleJeopardy" : "jeopardy";
+
+      const categories = prev.gameData[boardKey];
+
+      const { categoryIndex, questionIndex } = selectedQuestion;
+
+      const existingQuestion: Question =
+        categories[categoryIndex].questions[questionIndex];
+
+      const updatedQuestion = {
+        ...existingQuestion,
+        ...questionInputs,
+      };
+
+      const updatedCategories = categories.map((category, cIdx) =>
+        cIdx !== categoryIndex
+          ? category
+          : {
+              ...category,
+              questions: category.questions.map((q, qIdx) =>
+                qIdx !== questionIndex ? q : updatedQuestion
+              ),
+            }
+      );
+
+      return {
+        ...prev,
+        gameData: {
+          ...prev.gameData,
+          [boardKey]: updatedCategories,
+        },
+      };
+    });
+    saveDraft();
   };
 
   return (
@@ -68,7 +110,7 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
         <EditModal
           question={selectedQuestion}
           onClose={() => setEditing(false)}
-          hanldeUpdateQuestion={handleUpdateQuestion}
+          handleUpdateQuestion={handleUpdateQuestion}
         />
       )}
     </div>

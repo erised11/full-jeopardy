@@ -41,6 +41,7 @@ gameRouter.get("/:id", async (req, res) => {
     if (result.rows.length === 0) {
       return res.status(404).json({ error: "Game not found" });
     }
+
     const row = result.rows[0];
     res.json({
       id: row.id,
