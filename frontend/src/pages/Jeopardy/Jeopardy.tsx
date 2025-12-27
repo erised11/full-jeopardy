@@ -19,7 +19,7 @@ export type JeopardyQuestion = {
 
 export const Jeopardy = () => {
   const game = useJeopardyGameContext();
-  const [categories, setCategories] = useState(game.jeopardy);
+  const [categories, setCategories] = useState(game.gameData.jeopardy);
   const [playedDoubleJeopardy, setPlayedDoubleJeopardy] = useState(false);
   const [finalJeopardy, setFinalJeopardy] = useState(false);
   const [
@@ -55,7 +55,7 @@ export const Jeopardy = () => {
   const startDoubleJeopardy = () => {
     setAnsweredQuestionsCount(0);
     setPlayedDoubleJeopardy(true);
-    setCategories(game.doubleJeopardy);
+    setCategories(game.gameData.doubleJeopardy);
   };
 
   const startFinalJeopardy = () => {

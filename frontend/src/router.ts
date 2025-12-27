@@ -6,6 +6,7 @@ import JeopardySelect from "./pages/Jeopardy/JeopardySelect";
 import JeopardyLayout from "./layouts/JeopardyLayout";
 import JeopardyEdit from "./pages/Jeopardy/JeopardyEdit";
 import { jeopardyGameLoader } from "./loaders/jeopardyGameLoader";
+import { jeopardyGamesListLoader } from "./loaders/jeopardyGamesListLoader";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "jeopardy",
+        loader: jeopardyGamesListLoader,
         Component: JeopardySelect,
       },
     ],

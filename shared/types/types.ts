@@ -3,7 +3,7 @@ export type Question = {
   question: string;
   answer: string;
   type: string;
-  mediaUrl: string;
+  mediaUrl: string | null;
   dailyDouble: boolean;
   answered: boolean;
 };
@@ -15,11 +15,16 @@ export type Category = {
 
 export type FinalJeopardy = {
   question: string;
-  mediaUrl: string;
+  mediaUrl: string | null;
 };
 
 export type JeopardyGame = {
-  jeopardy: Category[];
-  doubleJeopardy: Category[];
-  finalJeopardy: FinalJeopardy;
+  id: number;
+  userId: number;
+  title: string;
+  gameData: {
+    jeopardy: Category[];
+    doubleJeopardy: Category[];
+    finalJeopardy: FinalJeopardy;
+  };
 };
