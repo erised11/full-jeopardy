@@ -41,17 +41,3 @@ export type JeopardyGameEntity = {
     finalJeopardy: FinalJeopardyType;
   };
 };
-
-export type JeopardyGameContextState = {
-  originalGame: JeopardyGameType | null;
-  draftGame: JeopardyGameType | null;
-  inDoubleJeopardy: boolean;
-  setInDoubleJeopardy: React.Dispatch<React.SetStateAction<boolean>>;
-  setOriginalGame: React.Dispatch<
-    React.SetStateAction<JeopardyGameType | null>
-  >;
-  startEditing: () => void;
-  setDraftGame: React.Dispatch<React.SetStateAction<JeopardyGameType | null>>;
-  saveDraft: () => Promise<void>;
-  discardDraft: () => void;
-};
