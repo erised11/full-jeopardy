@@ -1,19 +1,24 @@
 import { LoaderFunctionArgs } from "react-router";
-import { JeopardyGame } from "@shared/types/types";
+import { JeopardyGameType } from "@shared/types/types";
+import { gamesApi } from "@/services/gamesApi";
+import jeopardyTemplate from "../assets/template.json";
+import doubleJeopardyTemplate from "../assets/templateDouble.json";
 
 export async function jeopardyGameLoader({
   params,
-}: LoaderFunctionArgs): Promise<JeopardyGame> {
-  const response = await fetch(`http://localhost:4000/games/${params.gameId}`);
-
-  if (response.status === 404) {
-    throw new Response("Game not found", { status: 404 });
+}: LoaderFunctionArgs): Promise<JeopardyGameType> {
+  if (params.gameId) {
+    return gamesApi.getGame(params.gameId);
+  } else {
+    const newJeopardyGame: JeopardyGameType = {
+      userId: 1,
+      title: "New Game",
+      gameData: {
+        jeopardy: jeopardyTemplate,
+        doubleJeopardy: doubleJeopardyTemplate,
+        finalJeopardy: { question: "", mediaUrl: "" },
+      },
+    };
+    return newJeopardyGame;
   }
-
-  if (!response.ok) {
-    throw new Response("Failed to load game", { status: 500 });
-  }
-
-  const game: JeopardyGame = await response.json();
-  return game;
 }

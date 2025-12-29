@@ -1,44 +1,57 @@
-export type Question = {
+export type QuestionType = {
   value: number;
   question: string;
   answer: string;
-  type: string;
+  type: QuestionTypeEnum;
   mediaUrl: string | null;
   dailyDouble: boolean;
   answered: boolean;
 };
 
-export type Category = {
+export type CategoryType = {
   name: string;
-  questions: Question[];
+  questions: QuestionType[];
 };
 
-export type FinalJeopardy = {
+export type FinalJeopardyType = {
   question: string;
   mediaUrl: string | null;
 };
 
-export type QuestionType = "image" | "text" | "video" | "audio";
+export type QuestionTypeEnum = "image" | "text" | "video" | "audio";
 
-export type JeopardyGame = {
-  id: number;
+export type JeopardyGameType = {
+  id?: number;
   userId: number;
   title: string;
   gameData: {
-    jeopardy: Category[];
-    doubleJeopardy: Category[];
-    finalJeopardy: FinalJeopardy;
+    jeopardy: CategoryType[];
+    doubleJeopardy: CategoryType[];
+    finalJeopardy: FinalJeopardyType;
+  };
+};
+
+export type JeopardyGameEntity = {
+  id: number;
+  user_id: number;
+  title: string;
+  game_data: {
+    jeopardy: CategoryType[];
+    doubleJeopardy: CategoryType[];
+    finalJeopardy: FinalJeopardyType;
   };
 };
 
 export type JeopardyGameContextState = {
-  originalGame: JeopardyGame | null;
-  draftGame: JeopardyGame | null;
+  originalGame: JeopardyGameType | null;
+  draftGame: JeopardyGameType | null;
   inDoubleJeopardy: boolean;
   setInDoubleJeopardy: React.Dispatch<React.SetStateAction<boolean>>;
-  setOriginalGame: React.Dispatch<React.SetStateAction<JeopardyGame | null>>;
+  setOriginalGame: React.Dispatch<
+    React.SetStateAction<JeopardyGameType | null>
+  >;
   startEditing: () => void;
-  setDraftGame: React.Dispatch<React.SetStateAction<JeopardyGame | null>>;
+  setDraftGame: React.Dispatch<React.SetStateAction<JeopardyGameType | null>>;
   saveDraft: () => Promise<void>;
   discardDraft: () => void;
 };

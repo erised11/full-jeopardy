@@ -3,7 +3,7 @@
     "name": "Face the Fame",
     "questions": [
       {
-        "value": 100,
+        "value": 200,
         "question": "",
         "answer": "Who is Albert Einstein?",
         "type": "image",
@@ -12,7 +12,7 @@
         "answered": false
       },
       {
-        "value": 200,
+        "value": 400,
         "question": "",
         "answer": "Who is Tom Cruise?",
         "type": "image",
@@ -21,7 +21,7 @@
         "answered": false
       },
       {
-        "value": 300,
+        "value": 600,
         "question": "",
         "answer": "Who is Eliud Kipchoge?",
         "type": "image",
@@ -30,7 +30,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "Identify this famous person.",
         "answer": "Who is Frida Kahlo?",
         "type": "image",
@@ -39,7 +39,7 @@
         "answered": false
       },
       {
-        "value": 500,
+        "value": 1000,
         "question": "Identify this famous person.",
         "answer": "Who is Hunter Woodhall?",
         "type": "image",
@@ -53,7 +53,7 @@
     "name": "Breaking News",
     "questions": [
       {
-        "value": 100,
+        "value": 200,
         "question": "This is the most recently elected Bundeskanzler of Germany",
         "answer": "Who is Friedrich Merz?",
         "type": "text",
@@ -62,7 +62,7 @@
         "answered": false
       },
       {
-        "value": 200,
+        "value": 400,
         "question": "This country is experiencing its worst wildfires ever, already leaving 24 dead.",
         "answer": "What is South Korea?",
         "type": "text",
@@ -71,7 +71,7 @@
         "answered": false
       },
       {
-        "value": 300,
+        "value": 600,
         "question": "Trump officials accidentally included a reporter in their group chat discussing war plans, using this app",
         "answer": "What is Signal?",
         "type": "text",
@@ -80,7 +80,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "This running group was recently founded in Munich, focusing on diversity.",
         "answer": "What is moving minds?",
         "type": "text",
@@ -89,7 +89,7 @@
         "answered": false
       },
       {
-        "value": 500,
+        "value": 1000,
         "question": "",
         "answer": "What is the Serbian Protest Sonic Attack?",
         "type": "video",
@@ -103,7 +103,7 @@
     "name": "Name That Artist",
     "questions": [
       {
-        "value": 100,
+        "value": 200,
         "question": "",
         "answer": "Who is Bob Marley?",
         "type": "audio",
@@ -112,7 +112,7 @@
         "answered": false
       },
       {
-        "value": 200,
+        "value": 400,
         "question": "",
         "answer": "Who is Michael Jackson?",
         "type": "audio",
@@ -121,7 +121,7 @@
         "answered": false
       },
       {
-        "value": 300,
+        "value": 600,
         "question": "",
         "answer": "What is 'Bee Gees'?",
         "type": "audio",
@@ -130,7 +130,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "",
         "answer": "What is 'Europe'?",
         "type": "audio",
@@ -139,7 +139,7 @@
         "answered": false
       },
       {
-        "value": 500,
+        "value": 1000,
         "question": "",
         "answer": "What is '4 Non Blondes'?",
         "type": "audio",
@@ -153,7 +153,7 @@
     "name": "Who Said That?",
     "questions": [
       {
-        "value": 100,
+        "value": 200,
         "question": "'I have a dream.'",
         "answer": "Who is Martin Luther King Jr.?",
         "type": "text",
@@ -162,7 +162,7 @@
         "answered": false
       },
       {
-        "value": 200,
+        "value": 400,
         "question": "'That’s one small step for a man, a giant leap for mankind.'",
         "answer": "Who is Neil Armstrong?",
         "type": "text",
@@ -171,7 +171,7 @@
         "answered": false
       },
       {
-        "value": 300,
+        "value": 600,
         "question": "'All that glitters is not gold'",
         "answer": "Who is William Shakespeare?",
         "type": "text",
@@ -180,7 +180,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "'Was mich nicht umbringt, macht mich stärker'",
         "answer": "Who is Friedrich Nietzsche? (or Kelly Clarkson)",
         "type": "text",
@@ -189,7 +189,7 @@
         "answered": false
       },
       {
-        "value": 500,
+        "value": 1000,
         "question": "'...I've failed over and over and over again in my life. And that is why I succeed.'",
         "answer": "Who is Michael Jordan?",
         "type": "text",
@@ -203,7 +203,7 @@
     "name": "Cartoon Confidential",
     "questions": [
       {
-        "value": 100,
+        "value": 200,
         "question": "",
         "answer": "What is 'Ratatouille'?",
         "type": "video",
@@ -212,7 +212,7 @@
         "answered": false
       },
       {
-        "value": 200,
+        "value": 400,
         "question": "",
         "answer": "What is 'Up'?",
         "type": "video",
@@ -221,7 +221,7 @@
         "answered": false
       },
       {
-        "value": 300,
+        "value": 600,
         "question": "",
         "answer": "What is 'Tom and Jerry'?",
         "type": "video",
@@ -230,7 +230,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "",
         "answer": "What is 'Inside Out'?",
         "type": "video",
@@ -239,7 +239,7 @@
         "answered": false
       },
       {
-        "value": 500,
+        "value": 1000,
         "question": "",
         "answer": "What is 'Pumuckl'?",
         "type": "video",
@@ -253,7 +253,7 @@
     "name": "Pot Pourri",
     "questions": [
       {
-        "value": 100,
+        "value": 200,
         "question": "This is the tallest animal in the world.",
         "answer": "What is a giraffe?",
         "type": "text",
@@ -262,7 +262,7 @@
         "answered": false
       },
       {
-        "value": 200,
+        "value": 400,
         "question": "Kevadia, or the Statue of Unity, is the world's largest statue and found in this country.",
         "answer": "What is India?",
         "type": "text",
@@ -271,7 +271,7 @@
         "answered": false
       },
       {
-        "value": 300,
+        "value": 600,
         "question": "This country created the world's fastest Maglev train, capable of 460 km/h.",
         "answer": "What is China?",
         "type": "text",
@@ -280,7 +280,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "The fear of this number is called triskaidekaphobia.",
         "answer": "What is 13?",
         "type": "text",
@@ -289,7 +289,7 @@
         "answered": false
       },
       {
-        "value": 500,
+        "value": 1000,
         "question": "This European country’s name means 'Land of the Rabbits' in Latin",
         "answer": "What is Spain?",
         "type": "text",

@@ -18,15 +18,19 @@
 }
 
 @layer base {
-  h2 {
+  .h2shadow {
     text-shadow: 2px 2px 2px #000;
   }
 
-  h3 {
+  .h3shadow {
     text-shadow: 3px 3px 2px #000;
   }
 
-  p {
+  .pshadow {
     text-shadow: 8px 8px 2px #000;
+  }
+
+  .noShadow {
+    text-shadow: none;
   }
 }

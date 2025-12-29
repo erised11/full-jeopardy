@@ -30,7 +30,7 @@ export const ImageModal = ({
       onClick={onClose}
     >
       {showAnswer ? (
-        <p className="rounded-lg text-center text-[100px] w-3/4 font-korinna textShadow uppercase">
+        <p className="pshadow rounded-lg text-center text-[100px] w-3/4 font-korinna textShadow uppercase">
           {answer}
         </p>
       ) : (

@@ -3,7 +3,7 @@
     "name": "Easy Questions",
     "questions": [
       {
-        "value": 200,
+        "value": 400,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -12,7 +12,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "Identify this song.",
         "answer": "What is [Song Name]?",
         "type": "audio",
@@ -21,7 +21,7 @@
         "answered": false
       },
       {
-        "value": 600,
+        "value": 1200,
         "question": "What is shown in this image?",
         "answer": "What is [Image Description]?",
         "type": "image",
@@ -30,7 +30,7 @@
         "answered": false
       },
       {
-        "value": 800,
+        "value": 1600,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -39,7 +39,7 @@
         "answered": false
       },
       {
-        "value": 1000,
+        "value": 2000,
         "question": "Watch this clip and answer the question.",
         "answer": "What is [Answer]?",
         "type": "video",
@@ -53,7 +53,7 @@
     "name": "Hard Questions",
     "questions": [
       {
-        "value": 200,
+        "value": 400,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -62,7 +62,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "Identify this sound clip.",
         "answer": "What is [Sound Answer]?",
         "type": "audio",
@@ -71,7 +71,7 @@
         "answered": false
       },
       {
-        "value": 600,
+        "value": 1200,
         "question": "What location is shown in this image?",
         "answer": "What is [Location Name]?",
         "type": "image",
@@ -80,7 +80,7 @@
         "answered": false
       },
       {
-        "value": 800,
+        "value": 1600,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -89,7 +89,7 @@
         "answered": false
       },
       {
-        "value": 1000,
+        "value": 2000,
         "question": "Watch this clip and answer.",
         "answer": "What is [Video Answer]?",
         "type": "video",
@@ -103,7 +103,7 @@
     "name": "Other Questions",
     "questions": [
       {
-        "value": 200,
+        "value": 400,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -112,7 +112,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "Identify this sound clip.",
         "answer": "What is [Sound Answer]?",
         "type": "audio",
@@ -121,7 +121,7 @@
         "answered": false
       },
       {
-        "value": 600,
+        "value": 1200,
         "question": "What location is shown in this image?",
         "answer": "What is [Location Name]?",
         "type": "image",
@@ -130,7 +130,7 @@
         "answered": false
       },
       {
-        "value": 800,
+        "value": 1600,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -139,7 +139,7 @@
         "answered": false
       },
       {
-        "value": 1000,
+        "value": 2000,
         "question": "Watch this clip and answer.",
         "answer": "What is [Video Answer]?",
         "type": "video",
@@ -153,7 +153,7 @@
     "name": "Super Hard Questions",
     "questions": [
       {
-        "value": 200,
+        "value": 400,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -162,7 +162,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "Identify this sound clip.",
         "answer": "What is [Sound Answer]?",
         "type": "audio",
@@ -171,7 +171,7 @@
         "answered": false
       },
       {
-        "value": 600,
+        "value": 1200,
         "question": "What location is shown in this image?",
         "answer": "What is [Location Name]?",
         "type": "image",
@@ -180,7 +180,7 @@
         "answered": false
       },
       {
-        "value": 800,
+        "value": 1600,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -189,7 +189,7 @@
         "answered": false
       },
       {
-        "value": 1000,
+        "value": 2000,
         "question": "Watch this clip and answer.",
         "answer": "What is [Video Answer]?",
         "type": "video",
@@ -203,7 +203,7 @@
     "name": "Insane Questions",
     "questions": [
       {
-        "value": 200,
+        "value": 400,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -212,7 +212,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "Identify this sound clip.",
         "answer": "What is [Sound Answer]?",
         "type": "audio",
@@ -221,7 +221,7 @@
         "answered": false
       },
       {
-        "value": 600,
+        "value": 1200,
         "question": "What location is shown in this image?",
         "answer": "What is [Location Name]?",
         "type": "image",
@@ -230,7 +230,7 @@
         "answered": false
       },
       {
-        "value": 800,
+        "value": 1600,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -239,7 +239,7 @@
         "answered": false
       },
       {
-        "value": 1000,
+        "value": 2000,
         "question": "Watch this clip and answer.",
         "answer": "What is [Video Answer]?",
         "type": "video",
@@ -253,7 +253,7 @@
     "name": "Softballs",
     "questions": [
       {
-        "value": 200,
+        "value": 400,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -262,7 +262,7 @@
         "answered": false
       },
       {
-        "value": 400,
+        "value": 800,
         "question": "Identify this sound clip.",
         "answer": "What is [Sound Answer]?",
         "type": "audio",
@@ -271,7 +271,7 @@
         "answered": false
       },
       {
-        "value": 600,
+        "value": 1200,
         "question": "What location is shown in this image?",
         "answer": "What is [Location Name]?",
         "type": "image",
@@ -280,7 +280,7 @@
         "answered": false
       },
       {
-        "value": 800,
+        "value": 1600,
         "question": "This is an answer",
         "answer": "What is the question?",
         "type": "text",
@@ -289,7 +289,7 @@
         "answered": false
       },
       {
-        "value": 1000,
+        "value": 2000,
         "question": "Watch this clip and answer.",
         "answer": "What is [Video Answer]?",
         "type": "video",

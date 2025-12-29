@@ -6,15 +6,17 @@ import { AudioModal } from "../../components/AudioModal";
 import { VideoModal } from "../../components/VideoModal";
 import { FinalJeopardyModal } from "../../components/FinalJeopardyModal";
 import { useJeopardyGameContext } from "../../hooks/useJeopardyGameContext";
+import { QuestionTypeEnum } from "@shared/types/types";
 
 export type JeopardyQuestion = {
   categoryIndex: number;
   questionIndex: number;
   question: string;
   answer: string;
-  type: string;
+  type: QuestionTypeEnum;
   mediaUrl: string | null;
   dailyDouble: boolean;
+  value: number;
 };
 
 export const Jeopardy = () => {
@@ -52,6 +54,7 @@ export const Jeopardy = () => {
         type: question.type,
         mediaUrl: question.mediaUrl,
         dailyDouble: question.dailyDouble,
+        value: question.value,
       });
       setShowAnswer(false);
     } else {
@@ -121,6 +124,7 @@ export const Jeopardy = () => {
         {categories.map((category, cIdx) => (
           <Category
             key={cIdx}
+            editMode={false}
             name={category.name}
             questions={category.questions}
             onQuestionClick={(qIdx) => handleQuestionClick(cIdx, qIdx)}

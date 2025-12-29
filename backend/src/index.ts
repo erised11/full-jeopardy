@@ -7,7 +7,7 @@ console.log("DATABASE_URL:", process.env.DATABASE_URL);
 
 import express from "express";
 import cors from "cors";
-import { gameRouter } from "./routes/games";
+import { gameRouter } from "./Jeopardy/routes/games";
 
 const app = express();
 app.use(cors());

@@ -1,8 +1,12 @@
-import { JeopardyGame, JeopardyGameContextState } from "@shared/types/types";
-import { createContext, useEffect, useState } from "react";
+import { gamesApi } from "@/services/gamesApi";
+import {
+  JeopardyGameType,
+  JeopardyGameContextState,
+} from "@shared/types/types";
+import { createContext, useState } from "react";
 
 type JeopardyGameProviderProps = {
-  game: JeopardyGame;
+  game: JeopardyGameType;
   children: React.ReactNode;
 };
 
@@ -14,18 +18,17 @@ export function JeopardyGameProvider({
   game,
   children,
 }: JeopardyGameProviderProps) {
-  const [originalGame, setOriginalGame] = useState<JeopardyGame | null>(game);
-  const [draftGame, setDraftGame] = useState<JeopardyGame | null>(null);
+  const [originalGame, setOriginalGame] = useState<JeopardyGameType | null>(
+    game
+  );
+  const [draftGame, setDraftGame] = useState<JeopardyGameType | null>(null);
   const [inDoubleJeopardy, setInDoubleJeopardy] = useState<boolean>(false);
 
   const startEditing = () => {
     if (!originalGame) return;
+    if (draftGame) return;
     setDraftGame(structuredClone(originalGame));
   };
-
-  useEffect(() => {
-    saveDraft();
-  }, [draftGame]);
 
   const saveDraft = async () => {
     console.log(draftGame);
@@ -33,26 +36,13 @@ export function JeopardyGameProvider({
       return;
     }
     try {
-      const response = await fetch(
-        `http://localhost:4000/games/${draftGame.id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(draftGame),
-        }
-      );
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      console.log("Game updated successfully:", data);
+      gamesApi.updateGame(draftGame);
+      console.log("Game updated successfully");
       setOriginalGame(draftGame);
       setDraftGame(null);
-      return data;
     } catch (error) {
-      console.error("Error creating game:", error);
+      console.error("Error updating game:", error);
+      alert("Failed to save changes. Please try again.");
     }
   };
 
