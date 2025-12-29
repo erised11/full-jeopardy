@@ -3,8 +3,6 @@ import path from "path";
 
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
-console.log("DATABASE_URL:", process.env.DATABASE_URL);
-
 import express from "express";
 import cors from "cors";
 import { gameRouter } from "./Jeopardy/routes/games";
