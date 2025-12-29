@@ -43,16 +43,13 @@ export const gamesApi = {
   },
 
   async updateGame(draftGame: JeopardyGameType) {
-    const response = await fetch(
-      `http://localhost:4000/games/${draftGame.id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(draftGame),
-      }
-    );
+    const response = await fetch(`${API_URL}/games/${draftGame.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(draftGame),
+    });
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -60,7 +57,7 @@ export const gamesApi = {
   },
 
   async deleteGame(gameId: number | null) {
-    const response = await fetch(`http://localhost:4000/games/${gameId}`, {
+    const response = await fetch(`${API_URL}/games/${gameId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
