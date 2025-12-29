@@ -15,7 +15,7 @@ export const gamesApi = {
     return data;
   },
 
-  async getGame(gameId: string) {
+  async getGame(gameId: string | undefined) {
     const response = await fetch(`${API_URL}/games/${gameId}`);
 
     if (response.status === 404) {
@@ -53,6 +53,19 @@ export const gamesApi = {
         body: JSON.stringify(draftGame),
       }
     );
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  },
+
+  async deleteGame(gameId: number | null) {
+    const response = await fetch(`http://localhost:4000/games/${gameId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

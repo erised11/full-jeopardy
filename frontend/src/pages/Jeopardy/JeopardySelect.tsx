@@ -1,19 +1,31 @@
-import { Link, useLoaderData } from "react-router";
+import { Link, useLoaderData, useNavigate } from "react-router";
 import { JeopardyGameType } from "@shared/types/types";
 import { useState } from "react";
 import { Pencil, Trash2, Plus, Play } from "lucide-react";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import CreateGameModal from "@/components/CreateGameModal";
+import { gamesApi } from "@/services/gamesApi";
 
 const JeopardySelect = () => {
+  const navigate = useNavigate();
   const games = useLoaderData() as JeopardyGameType[];
   const [isCreating, setIsCreating] = useState(false);
   const [gameToDelete, setGameToDelete] = useState<number | null>(null);
 
   const deleteGame = async (gameId: number | null) => {
-    console.log("Deleting game:", gameId);
-    // Add your delete API call here
-    setGameToDelete(null);
+    if (!gameId) return;
+
+    try {
+      console.log(gameId);
+      await gamesApi.deleteGame(gameId);
+      console.log("Game deleted:", gameId);
+      setGameToDelete(null);
+
+      navigate(".", { replace: true });
+    } catch (error) {
+      console.error("Error deleting game:", error);
+      alert("Failed to delete game");
+    }
   };
 
   return (

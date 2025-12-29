@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { JeopardyGameEntity, JeopardyGameType } from "@shared/types/types";
 import { pool } from "../../db";
-import { title } from "process";
 
 export const gameRouter = Router();
 
@@ -59,11 +58,12 @@ gameRouter.delete("/:id", async (req, res) => {
     const { id } = req.params;
     console.log(`Deleting game with id: ${id}`);
     const result = await pool.query(`DELETE FROM games WHERE id = $1`, [id]);
-    if (result.rows.length === 0) {
+    if (result.rowCount === 0) {
       return res
         .status(404)
         .json({ error: "Could not delete game (game not found" });
     }
+    res.json(200);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Failed to delete game" });
