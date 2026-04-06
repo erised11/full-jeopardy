@@ -12,49 +12,30 @@ export type JeopardyGameContextState = {
   draftGame: JeopardyGameType | null;
   inDoubleJeopardy: boolean;
   setInDoubleJeopardy: React.Dispatch<React.SetStateAction<boolean>>;
-  setOriginalGame: React.Dispatch<
-    React.SetStateAction<JeopardyGameType | null>
-  >;
+  setOriginalGame: React.Dispatch<React.SetStateAction<JeopardyGameType | null>>;
   startEditing: () => void;
   setDraftGame: React.Dispatch<React.SetStateAction<JeopardyGameType | null>>;
-  saveDraft: () => Promise<void>;
+  saveDraft: (password?: string) => Promise<void>;
   discardDraft: () => void;
 };
 
-export const JeopardyGameContext = createContext<JeopardyGameContextState | null>(
-  null
-);
+export const JeopardyGameContext = createContext<JeopardyGameContextState | null>(null);
 
-export function JeopardyGameProvider({
-  game,
-  children,
-}: JeopardyGameProviderProps) {
-  const [originalGame, setOriginalGame] = useState<JeopardyGameType | null>(
-    game
-  );
+export function JeopardyGameProvider({ game, children }: JeopardyGameProviderProps) {
+  const [originalGame, setOriginalGame] = useState<JeopardyGameType | null>(game);
   const [draftGame, setDraftGame] = useState<JeopardyGameType | null>(null);
   const [inDoubleJeopardy, setInDoubleJeopardy] = useState<boolean>(false);
 
   const startEditing = () => {
-    if (!originalGame) return;
-    if (draftGame) return;
+    if (!originalGame || draftGame) return;
     setDraftGame(structuredClone(originalGame));
   };
 
-  const saveDraft = async () => {
-    console.log(draftGame);
-    if (!draftGame) {
-      return;
-    }
-    try {
-      gamesApi.updateGame(draftGame);
-      console.log("Game updated successfully");
-      setOriginalGame(draftGame);
-      setDraftGame(null);
-    } catch (error) {
-      console.error("Error updating game:", error);
-      alert("Failed to save changes. Please try again.");
-    }
+  const saveDraft = async (password?: string) => {
+    if (!draftGame) return;
+    await gamesApi.updateGame(draftGame, password);
+    setOriginalGame(draftGame);
+    setDraftGame(null);
   };
 
   const discardDraft = () => {

@@ -1,3 +1,4 @@
+import Modal from "./Modal";
 import Button from "./Button";
 
 type TextEditModalProps = {
@@ -16,21 +17,36 @@ const TextEditModal = ({
   handleInputCancel,
 }: TextEditModalProps) => {
   return (
-    <div className="fixed inset-0 z-50 grid place-items-center overflow-y-scroll font-medium noShadow text-left">
-      <div className="bg-white rounded-lg p-6 w-120 text-2xl">
-        <div className="text-xl mb-4 text-black ">{title}</div>
+    <Modal isOpen={true} onClose={handleInputCancel}>
+      <div className="p-6">
+        {title && (
+          <h2 className="text-xl font-bold text-gray-800 mb-4">{title}</h2>
+        )}
         <input
           type="text"
           value={value}
-          className="w-full border text-black border-gray-300 rounded px-4 py-2 mb-4"
+          className="w-full border border-gray-300 rounded-lg px-4 py-2 mb-6 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
           onChange={(e) => setInputValue(e.target.value)}
+          autoFocus
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleInputSave();
+            if (e.key === "Escape") handleInputCancel();
+          }}
         />
-        <div className="flex gap-2 justify-end  text-lg">
-          <Button text="Cancel" onClick={handleInputCancel} />
-          <Button text="Save" variant="fill" onClick={handleInputSave} />
+        <div className="flex gap-2 justify-end">
+          <Button variant="ghost" onClick={handleInputCancel}>
+            Cancel
+          </Button>
+          <Button
+            variant="primary"
+            className="bg-blue-600 hover:bg-blue-700 text-white hover:text-white"
+            onClick={handleInputSave}
+          >
+            Save
+          </Button>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 };
 

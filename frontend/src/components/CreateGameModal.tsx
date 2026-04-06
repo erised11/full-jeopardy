@@ -1,8 +1,10 @@
-// components/CreateGameModal.tsx
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { gamesApi } from "@/services/gamesApi";
 import { jeopardyTemplate, doubleJeopardyTemplate } from "@/assets/templates";
+import Modal from "./Modal";
+import Input from "./Input";
+import Button from "./Button";
 
 interface CreateGameModalProps {
   isOpen: boolean;
@@ -14,20 +16,27 @@ export default function CreateGameModal({
   onClose,
 }: CreateGameModalProps) {
   const [title, setTitle] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [isCreating, setIsCreating] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
 
   const handleCreate = async () => {
-    if (!title.trim()) {
-      alert("Please enter a game title");
+    if (!title.trim()) return;
+
+    if (password && password !== confirmPassword) {
+      setPasswordError("Passwords do not match");
       return;
     }
 
+    setPasswordError("");
     setIsCreating(true);
     try {
       const newGame = await gamesApi.createGame({
         userId: 1,
         title: title.trim(),
+        password: password || undefined,
         gameData: {
           jeopardy: jeopardyTemplate,
           doubleJeopardy: doubleJeopardyTemplate,
@@ -35,7 +44,6 @@ export default function CreateGameModal({
         },
       });
 
-      console.log("Game created:", newGame);
       navigate(`/games/${newGame.id}/edit`);
     } catch (error) {
       console.error("Error creating game:", error);
@@ -45,45 +53,75 @@ export default function CreateGameModal({
     }
   };
 
-  if (!isOpen) return null;
+  const handleClose = () => {
+    setTitle("");
+    setPassword("");
+    setConfirmPassword("");
+    setPasswordError("");
+    onClose();
+  };
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 w-120">
-        <div className="text-4xl mb-4 text-black ">
+    <Modal isOpen={isOpen} onClose={handleClose}>
+      <div className="p-6">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">
           Create New Jeopardy Game
+        </h2>
+
+        <div className="space-y-4">
+          <Input
+            id="game-title"
+            label="Game Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Enter game title..."
+            autoFocus
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && title.trim()) handleCreate();
+            }}
+          />
+
+          <div className="border-t border-gray-100 pt-4">
+            <p className="text-xs text-gray-400 mb-3">
+              Optional: set a password to protect editing and deleting this game.
+            </p>
+            <div className="space-y-3">
+              <Input
+                id="game-password"
+                type="password"
+                label="Password (optional)"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Leave blank for no password"
+              />
+              {password && (
+                <Input
+                  id="game-confirm-password"
+                  type="password"
+                  label="Confirm Password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder="Re-enter password"
+                  error={passwordError}
+                />
+              )}
+            </div>
+          </div>
         </div>
 
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Enter game title..."
-          className="w-full border border-gray-300 rounded px-4 py-2 mb-4"
-          autoFocus
-          onKeyDown={(e) => {
-            if (e.key === "Enter") handleCreate();
-            if (e.key === "Escape") onClose();
-          }}
-        />
-
-        <div className="flex gap-2 justify-end">
-          <button
-            onClick={onClose}
-            disabled={isCreating}
-            className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100"
-          >
+        <div className="flex gap-2 justify-end mt-6">
+          <Button variant="ghost" onClick={handleClose} disabled={isCreating}>
             Cancel
-          </button>
-          <button
+          </Button>
+          <Button
+            variant="primary"
             onClick={handleCreate}
             disabled={isCreating || !title.trim()}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:bg-gray-300"
           >
             {isCreating ? "Creating..." : "Create Game"}
-          </button>
+          </Button>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 }

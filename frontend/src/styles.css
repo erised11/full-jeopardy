@@ -5,6 +5,23 @@
   --color-number: #eda958;
   --font-swiss: "Swiss 911";
   --font-korinna: "ITC Korinna";
+
+  /* Semantic surface colors */
+  --color-surface: oklch(0.25 0.05 260);
+  --color-surface-hover: oklch(0.30 0.06 260);
+  --color-border: oklch(0.45 0.1 260 / 0.5);
+
+  /* Action colors */
+  --color-primary: #eab308;
+  --color-primary-hover: #facc15;
+  --color-danger: #dc2626;
+  --color-success: #16a34a;
+
+  /* Text */
+  --color-text-muted: #bfdbfe;
+
+  /* Overlays */
+  --color-backdrop: rgba(0, 0, 0, 0.6);
 }
 
 @font-face {

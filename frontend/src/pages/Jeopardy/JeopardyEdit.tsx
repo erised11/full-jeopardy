@@ -3,16 +3,24 @@ import { useJeopardyGameContext } from "../../hooks/useJeopardyGameContext";
 import { JeopardyQuestion } from "./Jeopardy";
 import EditModal, { JeopardyQuestionInputs } from "../../components/EditModal";
 import Button from "@/components/Button";
+import PasswordPromptModal from "@/components/PasswordPromptModal";
 import { CategoryType, QuestionType } from "@shared/types/types";
 import { Category } from "@/components/Category";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import TextEditModal from "@/components/TextEditModal";
+import { PasswordError } from "@/services/gamesApi";
 import { isEqual } from "lodash";
 
-type JeopardyEditProps = {};
-
-const JeopardyEdit = ({}: JeopardyEditProps) => {
+const JeopardyEdit = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Password passed via router state from JeopardySelect (for protected games)
+  const [password, setPassword] = useState<string | undefined>(
+    location.state?.password
+  );
+  const [showPasswordPrompt, setShowPasswordPrompt] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
 
   const {
     originalGame,
@@ -24,20 +32,12 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
     draftGame,
     discardDraft,
   } = useJeopardyGameContext();
-  if (!originalGame) {
-    return;
-  }
+
+  if (!originalGame) return null;
 
   const getCategoriesToEdit = (): CategoryType[] => {
-    if (draftGame) {
-      return inDoubleJeopardy
-        ? draftGame.gameData.doubleJeopardy
-        : draftGame.gameData.jeopardy;
-    } else {
-      return inDoubleJeopardy
-        ? originalGame.gameData.doubleJeopardy
-        : originalGame.gameData.jeopardy;
-    }
+    const game = draftGame ?? originalGame;
+    return inDoubleJeopardy ? game.gameData.doubleJeopardy : game.gameData.jeopardy;
   };
 
   const hasUnsavedChanges = useMemo(
@@ -45,28 +45,39 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
     [draftGame, originalGame]
   );
 
-  // const hasUnsavedChanges = draftGame !== null;
-
   const categories = getCategoriesToEdit();
 
-  const [
-    selectedQuestion,
-    setSelectedQuestion,
-  ] = useState<JeopardyQuestion | null>(null);
-
+  const [selectedQuestion, setSelectedQuestion] = useState<JeopardyQuestion | null>(null);
   const [editing, setEditing] = useState(false);
   const [editingTitle, setEditingTitle] = useState(false);
   const [title, setTitle] = useState(originalGame.title);
 
-  const toggleDoubleJeopardy = () => {
-    setInDoubleJeopardy(!inDoubleJeopardy);
+  const handleSave = async (pwd?: string) => {
+    const activePassword = pwd ?? password;
+    try {
+      await saveDraft(activePassword);
+    } catch (error) {
+      if (error instanceof PasswordError) {
+        setPasswordError(error.message);
+        setShowPasswordPrompt(true);
+      } else {
+        alert("Failed to save changes. Please try again.");
+      }
+    }
   };
+
+  const handlePasswordSubmit = (pwd: string) => {
+    setPassword(pwd);
+    setPasswordError("");
+    setShowPasswordPrompt(false);
+    handleSave(pwd);
+  };
+
+  const toggleDoubleJeopardy = () => setInDoubleJeopardy(!inDoubleJeopardy);
 
   const handleBackButton = () => {
     if (hasUnsavedChanges) {
-      if (
-        confirm("You have unsaved changes. Are you sure you want to leave?")
-      ) {
+      if (confirm("You have unsaved changes. Are you sure you want to leave?")) {
         navigate("/jeopardy");
       }
     } else {
@@ -76,18 +87,11 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
 
   const handleUpdateTitle = () => {
     startEditing();
-
-    setDraftGame((prev) => {
-      if (!prev) return prev;
-      return { ...prev, title: title };
-    });
+    setDraftGame((prev) => (prev ? { ...prev, title } : prev));
     setEditingTitle(false);
   };
 
-  const handleQuestionClick = (
-    categoryIndex: number,
-    questionIndex: number
-  ) => {
+  const handleQuestionClick = (categoryIndex: number, questionIndex: number) => {
     const question = categories[categoryIndex].questions[questionIndex];
     setSelectedQuestion({
       categoryIndex,
@@ -104,25 +108,16 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
 
   const handleUpdateCategory = (updatedName: string, categoryIndex: number) => {
     startEditing();
-
     setDraftGame((prev) => {
       if (!prev) return prev;
       const boardKey = inDoubleJeopardy ? "doubleJeopardy" : "jeopardy";
-      const categories = prev.gameData[boardKey];
-
-      const updatedCategories = categories.map((category, cIdx) =>
-        cIdx !== categoryIndex
-          ? category
-          : {
-              ...category,
-              name: updatedName,
-            }
-      );
       return {
         ...prev,
         gameData: {
           ...prev.gameData,
-          [boardKey]: updatedCategories,
+          [boardKey]: prev.gameData[boardKey].map((cat, i) =>
+            i === categoryIndex ? { ...cat, name: updatedName } : cat
+          ),
         },
       };
     });
@@ -130,42 +125,29 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
 
   const handleUpdateQuestion = (questionInputs: JeopardyQuestionInputs) => {
     if (!selectedQuestion) return;
-
-    startEditing(); // create the clone in the context
-
+    startEditing();
     setDraftGame((prev) => {
       if (!prev) return prev;
-
       const boardKey = inDoubleJeopardy ? "doubleJeopardy" : "jeopardy";
-
-      const categories = prev.gameData[boardKey];
-
       const { categoryIndex, questionIndex } = selectedQuestion;
-
       const existingQuestion: QuestionType =
-        categories[categoryIndex].questions[questionIndex];
-
-      const updatedQuestion = {
-        ...existingQuestion,
-        ...questionInputs,
-      };
-
-      const updatedCategories = categories.map((category, cIdx) =>
-        cIdx !== categoryIndex
-          ? category
-          : {
-              ...category,
-              questions: category.questions.map((q, qIdx) =>
-                qIdx !== questionIndex ? q : updatedQuestion
-              ),
-            }
-      );
-
+        prev.gameData[boardKey][categoryIndex].questions[questionIndex];
       return {
         ...prev,
         gameData: {
           ...prev.gameData,
-          [boardKey]: updatedCategories,
+          [boardKey]: prev.gameData[boardKey].map((cat, cIdx) =>
+            cIdx !== categoryIndex
+              ? cat
+              : {
+                  ...cat,
+                  questions: cat.questions.map((q, qIdx) =>
+                    qIdx !== questionIndex
+                      ? q
+                      : { ...existingQuestion, ...questionInputs }
+                  ),
+                }
+          ),
         },
       };
     });
@@ -174,11 +156,8 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
   return (
     <div className="w-full h-[100vh] bg-jeopardy flex">
       <div className="pl-4">
-        <div className="mt-5 p-2 m-auto font-swiss uppercase textShadow text-5xl text-white flex justify-center ">
-          <div
-            onClick={() => setEditingTitle(true)}
-            className="hover:bg-white/90"
-          >
+        <div className="mt-5 p-2 m-auto font-swiss uppercase textShadow text-5xl text-white flex justify-center">
+          <div onClick={() => setEditingTitle(true)} className="hover:bg-white/90">
             {draftGame ? draftGame.title : originalGame.title}
           </div>
         </div>
@@ -197,29 +176,31 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
           ))}
         </div>
       </div>
+
       <div className="flex flex-col justify-between p-4 mt-18 w-1/5">
         <div className="flex flex-col gap-4 text-center">
-          <div className="text-white ">
-            <Button text="Save Changes" onClick={saveDraft} />
-          </div>
-          <div className="text-white">
-            <Button
-              text={`${inDoubleJeopardy ? "Jeopardy" : "Double Jeopardy"}`}
-              onClick={toggleDoubleJeopardy}
-            />
-          </div>
+          <Button
+            variant="primary"
+            onClick={() => handleSave()}
+            disabled={!hasUnsavedChanges}
+          >
+            Save Changes
+          </Button>
+          <Button variant="outline" onClick={toggleDoubleJeopardy}>
+            {inDoubleJeopardy ? "← Jeopardy" : "Double Jeopardy →"}
+          </Button>
           {hasUnsavedChanges && (
-            <div className="text-white">
-              <Button text="Clear Changes" onClick={discardDraft} />
-            </div>
+            <Button variant="danger" onClick={discardDraft}>
+              Clear Changes
+            </Button>
           )}
         </div>
         <div className="mb-2 p-4 flex justify-center">
-          <Button text="Back to Select" onClick={handleBackButton} />
+          <Button variant="outline" onClick={handleBackButton}>
+            ← Back to Select
+          </Button>
         </div>
       </div>
-
-      {/* {finalJeopardy && <FinalJeopardyModal></FinalJeopardyModal>} */}
 
       {selectedQuestion && editing && (
         <EditModal
@@ -228,6 +209,7 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
           handleUpdateQuestion={handleUpdateQuestion}
         />
       )}
+
       {editingTitle && (
         <TextEditModal
           title="Edit Title"
@@ -237,6 +219,16 @@ const JeopardyEdit = ({}: JeopardyEditProps) => {
           handleInputCancel={() => setEditingTitle(false)}
         />
       )}
+
+      <PasswordPromptModal
+        isOpen={showPasswordPrompt}
+        onSubmit={handlePasswordSubmit}
+        onCancel={() => {
+          setShowPasswordPrompt(false);
+          setPasswordError("");
+        }}
+        error={passwordError}
+      />
     </div>
   );
 };
