@@ -68,9 +68,9 @@ const Home = () => {
                 />
               </div>
 
-              {/* Content */}
+                {/* Content */}
               <div className="p-5">
-                <h2 className={`text-xl font-bold text-white mb-1.5 group-hover:text-yellow-300 transition-colors duration-200 ${game.fontClass ?? ""}`}>
+                <h2 className={`text-3xl text-white mb-1.5 group-hover:text-yellow-300 transition-colors duration-200 ${game.fontClass ?? ""}`}>
                   {game.title}
                 </h2>
                 <p className="text-gray-400 text-sm leading-relaxed">{game.description}</p>
