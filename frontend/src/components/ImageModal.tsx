@@ -26,7 +26,7 @@ export const ImageModal = ({
     <DailyDoubleModal onClose={closeDaily}></DailyDoubleModal>
   ) : (
     <div
-      className="absolute inset-0 left-0 top-0 w-[100vw] bg-jeopardy h-[100vh] flex items-center justify-center text-white cursor-pointer"
+      className="absolute inset-0 z-10 left-0 top-0 w-[100vw] bg-jeopardy h-[100vh] flex items-center justify-center text-white cursor-pointer"
       onClick={onClose}
     >
       {showAnswer ? (

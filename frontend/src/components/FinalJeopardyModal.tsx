@@ -12,7 +12,7 @@ export const FinalJeopardyModal = () => {
   return (
     <>
       {" "}
-      <div className="absolute inset-0 left-0 top-0 w-[100vw] bg-jeopardy h-[100vh] flex items-center justify-center text-white cursor-pointer">
+      <div className="absolute z-10 inset-0 left-0 top-0 w-[100vw] bg-jeopardy h-[100vh] flex items-center justify-center text-white cursor-pointer">
         <p className="rounded-lg text-center text-[100px] w-4/5 font-korinna textShadow uppercase">
           {question}
         </p>
@@ -24,7 +24,7 @@ export const FinalJeopardyModal = () => {
         </button>
       </div>
       {showAnswer && (
-        <div className="absolute inset-0 left-0 top-0 w-[100vw] bg-jeopardy h-[100vh] flex items-center justify-center text-white cursor-pointer">
+        <div className="absolute z-10 inset-0 left-0 top-0 w-[100vw] bg-jeopardy h-[100vh] flex items-center justify-center text-white cursor-pointer">
           <img
             src={imageUrl}
             className="h-[90%] object-fit-scale"

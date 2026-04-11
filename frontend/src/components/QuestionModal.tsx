@@ -22,7 +22,7 @@ export const QuestionModal = ({
     <DailyDoubleModal onClose={closeDaily}></DailyDoubleModal>
   ) : (
     <div
-      className="absolute inset-0 left-0 top-0 w-[100vw] bg-jeopardy h-[100vh] flex items-center justify-center text-white cursor-pointer"
+      className="absolute inset-0 left-0 top-0 w-[100vw] bg-jeopardy h-[100vh] flex items-center justify-center text-white cursor-pointer z-10"
       onClick={onClose}
     >
       <p className="pshadow rounded-lg text-center text-[100px] w-4/5 font-korinna textShadow uppercase">
