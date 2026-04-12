@@ -75,6 +75,7 @@ export const Category = ({
             value={q.value}
             answered={q.answered}
             editMode={editMode}
+            dailyDouble={q.dailyDouble}
             onClick={() => onQuestionClick(qIdx)}
           />
         ))}

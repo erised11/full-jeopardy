@@ -13,6 +13,7 @@ interface QuestionProps {
   answered: boolean;
   onClick: () => void;
   editMode: boolean;
+  dailyDouble?: boolean;
 }
 
 export const Question = ({
@@ -20,12 +21,13 @@ export const Question = ({
   answered,
   onClick,
   editMode,
+  dailyDouble,
 }: QuestionProps) => {
   return (
     <div
       className={`bg-jeopardy text-white cursor-pointer rounded-md shadow-lg w-full flex flex-col justify-center ${
         editMode ? "h-25 hover:bg-white/90" : "hover:bg-jeopardy/80 h-30"
-      }`}
+      } ${editMode && dailyDouble ? "ring-2 ring-red-500 ring-inset" : ""}`}
       onClick={onClick}
     >
       {!answered && (
