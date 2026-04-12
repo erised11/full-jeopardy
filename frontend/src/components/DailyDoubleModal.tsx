@@ -3,7 +3,7 @@ interface DailyDoubleModalProps {
 }
 
 export const DailyDoubleModal = ({ onClose }: DailyDoubleModalProps) => {
-  const dailyAudio = new Audio("dailydouble.wav");
+  const dailyAudio = new Audio("/dailydouble.wav");
   dailyAudio.play();
   return (
     <div
