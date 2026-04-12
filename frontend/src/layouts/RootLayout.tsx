@@ -8,7 +8,7 @@ export default function Root() {
     <div className="min-h-screen text-white">
       {loading && (
         <div className="fixed top-0 left-0 right-0 z-[9999] h-1 bg-yellow-400/30">
-          <div className="h-full bg-yellow-400 animate-[loading_1s_ease-in-out_infinite]" style={{ width: "60%" }} />
+          <div className="h-full bg-yellow-400 animate-[loading_1s_ease-in-out_forwards]" style={{ width: "60%" }} />
         </div>
       )}
       <nav className="sticky top-0 z-50 flex justify-between items-center px-6 md:px-12 py-4 bg-gray-900/90 backdrop-blur-md border-b border-white/8">

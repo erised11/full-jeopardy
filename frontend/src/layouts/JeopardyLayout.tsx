@@ -11,7 +11,7 @@ export default function JeopardyLayout() {
     <JeopardyGameProvider game={game}>
       {loading && (
         <div className="fixed top-0 left-0 right-0 z-[9999] h-1 bg-yellow-400/30">
-          <div className="h-full bg-yellow-400 animate-[loading_1s_ease-in-out_infinite]" style={{ width: "60%" }} />
+          <div className="h-full bg-yellow-400 animate-[loading_1s_ease-in-out_forwards]" style={{ width: "60%" }} />
         </div>
       )}
       <Outlet />
