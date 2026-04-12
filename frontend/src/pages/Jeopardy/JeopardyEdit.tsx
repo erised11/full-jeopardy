@@ -155,13 +155,13 @@ const JeopardyEdit = () => {
 
   return (
     <div className="w-full h-[100vh] bg-jeopardy flex">
-      <div className="pl-4">
+      <div className="flex-1 min-w-0 pl-4">
         <div className="mt-5 p-2 m-auto font-swiss uppercase textShadow text-5xl text-white flex justify-center">
           <div onClick={() => setEditingTitle(true)} className="hover:bg-white/90">
             {draftGame ? draftGame.title : originalGame.title}
           </div>
         </div>
-        <div className="flex flex-row bg-black pb-2">
+        <div className="flex flex-row bg-black pb-2 w-full">
           {categories.map((category, cIdx) => (
             <Category
               key={cIdx}
