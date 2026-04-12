@@ -44,7 +44,7 @@ const Scoreboard = ({
                 onClick={() => onAdjust(i, -1)}
                 className={`w-10 h-8 rounded-lg font-bold text-sm transition-all ${
                   isActive
-                    ? "bg-red-600 hover:bg-red-500 text-white shadow-md hover:scale-105"
+                    ? "bg-red-800 hover:bg-red-700 text-white shadow-md hover:scale-105"
                     : "bg-white/10 text-white/50 hover:bg-white/20 hover:text-white"
                 }`}
                 title={isActive ? `-$${activeValue}` : "No active question"}
@@ -55,7 +55,7 @@ const Scoreboard = ({
                 onClick={() => onAdjust(i, 1)}
                 className={`w-10 h-8 rounded-lg font-bold text-sm transition-all ${
                   isActive
-                    ? "bg-green-600 hover:bg-green-500 text-white shadow-md hover:scale-105"
+                    ? "bg-green-700 hover:bg-green-600 text-white shadow-md hover:scale-105"
                     : "bg-white/10 text-white/50 hover:bg-white/20 hover:text-white"
                 }`}
                 title={isActive ? `+$${activeValue}` : "No active question"}
