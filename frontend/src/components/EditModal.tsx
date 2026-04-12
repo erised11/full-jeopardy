@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { QuestionTypeEnum } from "@shared/types/types";
 import { JeopardyQuestion } from "../pages/Jeopardy/Jeopardy";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Modal from "./Modal";
 import Button from "./Button";
+import { ImageModal } from "./ImageModal";
+import { AudioModal } from "./AudioModal";
+import { VideoModal } from "./VideoModal";
 
 export type JeopardyQuestionInputs = {
   type: QuestionTypeEnum;
@@ -45,6 +49,8 @@ const EditModal = ({
   });
 
   const selectedType = watch("type");
+  const mediaUrl = watch("mediaUrl");
+  const [showPreview, setShowPreview] = useState(false);
 
   const onSubmit: SubmitHandler<JeopardyQuestionInputs> = (data) => {
     handleUpdateQuestion(data);
@@ -52,6 +58,7 @@ const EditModal = ({
   };
 
   return (
+    <>
     <Modal isOpen={true} onClose={onClose} maxWidth="max-w-2xl">
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -180,6 +187,11 @@ const EditModal = ({
           <Button type="button" variant="ghost" onClick={onClose}>
             Cancel
           </Button>
+          {selectedType !== "text" && mediaUrl && (
+            <Button type="button" variant="secondary" onClick={() => setShowPreview(true)}>
+              Preview
+            </Button>
+          )}
           <Button
             type="submit"
             variant="primary"
@@ -189,7 +201,23 @@ const EditModal = ({
           </Button>
         </div>
       </form>
+
     </Modal>
+
+    {showPreview && (
+      <div className="fixed inset-0 z-[200]">
+        {selectedType === "image" && (
+          <ImageModal imageUrl={mediaUrl} onClose={() => setShowPreview(false)} showAnswer={false} answer="" dailyDouble={false} />
+        )}
+        {selectedType === "audio" && (
+          <AudioModal audioUrl={mediaUrl} onClose={() => setShowPreview(false)} showAnswer={false} answer="" dailyDouble={false} />
+        )}
+        {selectedType === "video" && (
+          <VideoModal videoUrl={mediaUrl} onClose={() => setShowPreview(false)} showAnswer={false} answer="" dailyDouble={false} />
+        )}
+      </div>
+    )}
+  </>
   );
 };
 
